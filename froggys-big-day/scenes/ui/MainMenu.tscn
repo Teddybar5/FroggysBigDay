@@ -1,3 +1,16 @@
 [gd_scene format=3 uid="uid://d38gabgdvuyhe"]
 
+[ext_resource type="Texture2D" uid="uid://fcvmlk6u3kpu" path="res://assets/art/BG_02.png" id="1_6jbdy"]
+[ext_resource type="Texture2D" uid="uid://c0yi6txvnaulv" path="res://assets/art/Game Title Logo_transp.png" id="2_iwbf0"]
+
 [node name="MainMenu" type="Node2D" unique_id=1266120856]
+
+[node name="Bg02" type="Sprite2D" parent="." unique_id=451454451]
+position = Vector2(578, 325.5)
+scale = Vector2(0.7539063, 0.8554688)
+texture = ExtResource("1_6jbdy")
+
+[node name="GameTitleLogoTransp" type="Sprite2D" parent="." unique_id=21157108]
+position = Vector2(342.00003, 157)
+scale = Vector2(0.5041557, 0.5043478)
+texture = ExtResource("2_iwbf0")
