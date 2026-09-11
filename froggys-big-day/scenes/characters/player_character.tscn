@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bbdarh4ao4lf8"]
 
 [ext_resource type="Script" uid="uid://djcbidfx36m4f" path="res://scripts/player.gd" id="1_3hfu2"]
-[ext_resource type="Texture2D" uid="uid://bqglfithk87ho" path="res://assets/art/ExamplePlayerSprite.png" id="1_5l4cv"]
+[ext_resource type="Texture2D" uid="uid://jlu6pr8cgemj" path="res://assets/art/ExamplePlayerSprite - Copy (2).png" id="2_3hfu2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bih8b"]
 
@@ -141,7 +141,7 @@ shape = SubResource("CircleShape2D_bih8b")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1395141653]
 position = Vector2(0, -22)
-texture = ExtResource("1_5l4cv")
+texture = ExtResource("2_3hfu2")
 hframes = 21
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1045348498]
