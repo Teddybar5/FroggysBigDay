@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0yi6txvnaulv"
-path="res://.godot/imported/Game Title Logo_transp.png-c1cd89b3776d6246fe81738de4d1d96f.ctex"
+uid="uid://jlu6pr8cgemj"
+path="res://.godot/imported/ExamplePlayerSprite - Copy (2).png-9626b7f69afbf6893a6bfc168a4afeaa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Game Title Logo_transp.png"
-dest_files=["res://.godot/imported/Game Title Logo_transp.png-c1cd89b3776d6246fe81738de4d1d96f.ctex"]
+source_file="res://assets/art/sprites/ExamplePlayerSprite - Copy (2).png"
+dest_files=["res://.godot/imported/ExamplePlayerSprite - Copy (2).png-9626b7f69afbf6893a6bfc168a4afeaa.ctex"]
 
 [params]
 
