@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b7g8rwstj8kft"]
+
+[ext_resource type="Script" uid="uid://crb3umauf0qp3" path="res://scripts/flowerDisplayController.gd" id="1_q2mbe"]
+
+[node name="FlowerDisplay" type="Label" unique_id=977926036]
+offset_right = 86.0
+offset_bottom = 24.0
+script = ExtResource("1_q2mbe")

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dhpsnoy3sryjx"]
+
+[ext_resource type="Texture2D" uid="uid://caxg44uoqpn4y" path="res://assets/art/sprites/flowers/Flower 8 - RED.png" id="1_ie8mx"]
+[ext_resource type="Script" uid="uid://0ncqwt4rqj17" path="res://scripts/flowerItem.gd" id="2_hlt1y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5inxd"]
+radius = 33.24154
+
+[node name="Flower0" type="Sprite2D" unique_id=1809817678]
+texture = ExtResource("1_ie8mx")
+script = ExtResource("2_hlt1y")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1958706635]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2089824318]
+shape = SubResource("CircleShape2D_5inxd")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
