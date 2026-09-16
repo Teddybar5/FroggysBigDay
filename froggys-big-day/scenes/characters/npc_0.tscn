@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://7crckt4mcknp"]
+
+[ext_resource type="Texture2D" uid="uid://do4tmbfx35h0u" path="res://assets/art/sprites/PlayerSprite02.png" id="1_e4asy"]
+[ext_resource type="Script" uid="uid://cq4mfftk1eff" path="res://scripts/npc.gd" id="1_xtkue"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4m22b"]
+size = Vector2(26, 48)
+
+[sub_resource type="Animation" id="Animation_e4asy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_xtkue"]
+resource_name = "idle"
+length = 0.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.03333333, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_53m56"]
+resource_name = "talking"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_53m56"]
+_data = {
+&"RESET": SubResource("Animation_e4asy"),
+&"idle": SubResource("Animation_xtkue"),
+&"talking": SubResource("Animation_53m56")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ri2x3"]
+size = Vector2(99, 80.5)
+
+[node name="Npc0" type="CharacterBody2D" unique_id=2014059936]
+script = ExtResource("1_xtkue")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=140287388]
+shape = SubResource("RectangleShape2D_4m22b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1794010713]
+texture = ExtResource("1_e4asy")
+hframes = 16
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=239034113]
+libraries/ = SubResource("AnimationLibrary_53m56")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1247122190]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=302615192]
+position = Vector2(2, 18)
+shape = SubResource("RectangleShape2D_ri2x3")
+
+[connection signal="area_entered" from="InteractionArea" to="." method="_on_interaction_area_area_entered"]
+[connection signal="area_exited" from="InteractionArea" to="." method="_on_interaction_area_area_exited"]
+[connection signal="area_shape_entered" from="InteractionArea" to="." method="_on_interaction_area_area_shape_entered"]
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]

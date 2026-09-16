@@ -1,16 +1,49 @@
 [gd_scene format=3 uid="uid://d38gabgdvuyhe"]
 
 [ext_resource type="Texture2D" uid="uid://fcvmlk6u3kpu" path="res://assets/art/UI/BG_02.png" id="1_6jbdy"]
+[ext_resource type="Script" uid="uid://daw84csxs6rld" path="res://scripts/mainmenu.gd" id="1_iwbf0"]
 [ext_resource type="Texture2D" uid="uid://c0yi6txvnaulv" path="res://assets/art/UI/Game Title Logo_transp.png" id="2_iwbf0"]
+[ext_resource type="Texture2D" uid="uid://cyoqa7ptutc32" path="res://assets/art/UI/20250420manaSoulHeaderB-Sheet.png" id="4_e2per"]
+[ext_resource type="Texture2D" uid="uid://xcru0em2fx16" path="res://assets/art/UI/20250420manaSoulHeaderB-Sheet (3).png" id="5_7mi0g"]
+[ext_resource type="Texture2D" uid="uid://ciw32wys01m80" path="res://assets/art/UI/20250420manaSoulHeaderB-Sheet (2).png" id="6_nqjyj"]
+[ext_resource type="Texture2D" uid="uid://ckp8qnattunen" path="res://assets/art/UI/20250420manaSoulHeaderB-Sheet (1).png" id="7_7vr37"]
 
 [node name="MainMenu" type="Node2D" unique_id=1266120856]
+script = ExtResource("1_iwbf0")
 
 [node name="Bg02" type="Sprite2D" parent="." unique_id=451454451]
-position = Vector2(578, 325.5)
-scale = Vector2(0.7539063, 0.8554688)
+position = Vector2(240.5, 136.49998)
+scale = Vector2(0.31445318, 0.36328128)
 texture = ExtResource("1_6jbdy")
 
 [node name="GameTitleLogoTransp" type="Sprite2D" parent="." unique_id=21157108]
-position = Vector2(342.00003, 157)
-scale = Vector2(0.5041557, 0.5043478)
+position = Vector2(127.000015, 52.000008)
+scale = Vector2(0.1514654, 0.15652172)
 texture = ExtResource("2_iwbf0")
+
+[node name="ButtonManager" type="Control" parent="." unique_id=999022611]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Play" type="TextureButton" parent="ButtonManager" unique_id=1772857110]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 149.0
+offset_right = 358.0
+offset_bottom = 171.0
+texture_normal = ExtResource("4_e2per")
+texture_pressed = ExtResource("5_7mi0g")
+
+[node name="Quit" type="TextureButton" parent="ButtonManager" unique_id=1246513169]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 181.0
+offset_right = 358.0
+offset_bottom = 203.0
+texture_normal = ExtResource("6_nqjyj")
+texture_pressed = ExtResource("7_7vr37")
+
+[connection signal="pressed" from="ButtonManager/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="ButtonManager/Quit" to="." method="_on_quit_pressed"]

@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://bbdarh4ao4lf8"]
 
 [ext_resource type="Script" uid="uid://djcbidfx36m4f" path="res://scripts/player.gd" id="1_3hfu2"]
-[ext_resource type="Texture2D" uid="uid://cbde08vieu04k" path="res://assets/art/sprites/PlayerSpriteUpdated.png" id="2_hfyxy"]
+[ext_resource type="Texture2D" uid="uid://jlu6pr8cgemj" path="res://assets/art/sprites/ExamplePlayerSprite - Copy (2).png" id="2_hfyxy"]
 [ext_resource type="Script" uid="uid://d0ije6ol4crod" path="res://scripts/player_state_machine.gd" id="3_mjudt"]
 [ext_resource type="Script" uid="uid://bsgaooo76usjr" path="res://scripts/state_idle.gd" id="4_ar13e"]
 [ext_resource type="Script" uid="uid://bu7khgqq6qbsc" path="res://scripts/state_walk.gd" id="5_hfyxy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bih8b"]
+radius = 15.0
 
 [sub_resource type="Animation" id="Animation_3hfu2"]
 length = 0.001
@@ -54,7 +55,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [6, 8]
+"values": [14, 16]
 }
 
 [sub_resource type="Animation" id="Animation_hfyxy"]
@@ -70,8 +71,8 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.13333334, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [3, 4, 5]
+"update": 0,
+"values": [7, 8, 9]
 }
 
 [sub_resource type="Animation" id="Animation_hto64"]
@@ -88,7 +89,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [9, 12]
+"values": [3, 6]
 }
 
 [sub_resource type="Animation" id="Animation_1dev2"]
@@ -122,7 +123,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [13, 16]
+"values": [10, 13]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1dev2"]
@@ -137,19 +138,19 @@ _data = {
 }
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=2100650840]
-collision_mask = 16
+collision_mask = 17
 motion_mode = 1
 script = ExtResource("1_3hfu2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2061724923]
+position = Vector2(-1, -11)
 shape = SubResource("CircleShape2D_bih8b")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1395141653]
 texture_filter = 1
 position = Vector2(0, -22)
 texture = ExtResource("2_hfyxy")
-hframes = 16
-vframes = 3
+hframes = 21
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1045348498]
 libraries/ = SubResource("AnimationLibrary_1dev2")
