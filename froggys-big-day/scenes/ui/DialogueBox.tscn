@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cgdjyxxhnsflr"]
+
+[node name="DialogueBox" type="RichTextLabel" unique_id=1030886335]
