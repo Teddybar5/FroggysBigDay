@@ -20,7 +20,7 @@ layer_0/tile_data = PackedInt32Array(0, 655360, 4, 65536, 655360, 5, 131072, 655
 
 [node name="Npc0" parent="." unique_id=2014059936 instance=ExtResource("3_o8weq")]
 y_sort_enabled = true
-position = Vector2(169, 261)
+position = Vector2(256, 302)
 
 [node name="Flower0" parent="." unique_id=1809817678 instance=ExtResource("4_c53nr")]
 position = Vector2(582, 100)
@@ -47,10 +47,10 @@ position = Vector2(206, -73)
 anchors_preset = -1
 anchor_right = 0.16600001
 anchor_bottom = 0.14
-offset_left = 68.0
-offset_top = 208.0
-offset_right = 271.0
-offset_bottom = 263.0
+offset_left = 159.0
+offset_top = 256.0
+offset_right = 362.0
+offset_bottom = 311.0
 text = "I want 5 flowers"
 horizontal_alignment = 1
 
