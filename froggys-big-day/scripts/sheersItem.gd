@@ -1,4 +1,5 @@
-class_name Flower extends Node #make an item class that this and other items can extend
+class_name Sheers extends Node
+
 
 var player_in_range = false
 @onready var player_character: Player = $"../PlayerCharacter"
@@ -30,9 +31,9 @@ func _input(event: InputEvent) -> void:
 		
 func run_dialogue() -> void:
 	dialogue_box.show()
-	dialogue_box.text = "Strength check..."
+	dialogue_box.text = "Wisdom check..."
 	await get_tree().create_timer(0.5).timeout
-	if player_character.run_ability_check(3, 2): 
+	if player_character.run_ability_check(0, 1): 
 		dialogue_box.text = "Success!"
 		await get_tree().create_timer(0.5).timeout
 		pick_up_object()
@@ -41,5 +42,5 @@ func run_dialogue() -> void:
 
 
 func pick_up_object() -> void:
-	player_character.UpdateFlowers(1)
+	player_character.strength = 3
 	queue_free()

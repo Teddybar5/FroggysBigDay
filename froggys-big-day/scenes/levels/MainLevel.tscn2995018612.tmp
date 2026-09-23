@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://7crckt4mcknp" path="res://scenes/characters/npc_0.tscn" id="6_3ijqg"]
 [ext_resource type="PackedScene" uid="uid://dhpsnoy3sryjx" path="res://scenes/Items/flower_0.tscn" id="6_214bh"]
 [ext_resource type="PackedScene" uid="uid://b7g8rwstj8kft" path="res://scenes/ui/flowerDisplay.tscn" id="6_dnftk"]
-[ext_resource type="PackedScene" uid="uid://c222m6dbnjsie" path="res://scenes/Items/sheers.tscn" id="7_dnftk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2c88n"]
 content_margin_left = 20.0
@@ -37,12 +36,6 @@ position = Vector2(86, 66)
 [node name="Flower2" parent="." unique_id=66205691 instance=ExtResource("6_214bh")]
 position = Vector2(223, 43)
 
-[node name="Flower3" parent="." unique_id=943348552 instance=ExtResource("6_214bh")]
-position = Vector2(60, 202)
-
-[node name="Flower4" parent="." unique_id=839873959 instance=ExtResource("6_214bh")]
-position = Vector2(551, 67)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1929615817]
 
 [node name="FlowerDisplay" parent="CanvasLayer" unique_id=977926036 instance=ExtResource("6_dnftk")]
@@ -59,6 +52,3 @@ offset_bottom = 172.92
 theme_override_font_sizes/normal_font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxEmpty_2c88n")
 text = "I need help finding flowers for my mom!"
-
-[node name="Sheers" parent="." unique_id=757987813 instance=ExtResource("7_dnftk")]
-position = Vector2(294, -79)

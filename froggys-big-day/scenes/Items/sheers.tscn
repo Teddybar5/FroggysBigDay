@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c222m6dbnjsie"]
+
+[ext_resource type="Texture2D" uid="uid://btflijfol8477" path="res://assets/art/sprites/Shadow.png" id="1_1saeg"]
+[ext_resource type="Script" uid="uid://dab4o43rakwm0" path="res://scripts/sheersItem.gd" id="2_1saeg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5inxd"]
+radius = 33.24154
+
+[node name="Sheers" type="Sprite2D" unique_id=1809817678]
+texture = ExtResource("1_1saeg")
+script = ExtResource("2_1saeg")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1958706635]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2089824318]
+shape = SubResource("CircleShape2D_5inxd")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

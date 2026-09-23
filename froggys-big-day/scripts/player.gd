@@ -4,6 +4,12 @@ var cardinal_direction : Vector2 = Vector2.DOWN
 var direction : Vector2 = Vector2.ZERO
 var flowers : int = 0
 
+#Stat Variables
+@export var wisdom : int = 1 
+@export var empathy : int = 1 
+@export var courage : int = 1
+@export var strength : int = 1
+var stats: Array[int] = [wisdom, empathy, courage, strength]
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
@@ -26,6 +32,12 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
+func run_ability_check(ability: int, min : int) -> bool:
+	stats = [wisdom, empathy, courage, strength]
+	if stats[ability] >= min:
+		return true
+	return false
+	
 func SetDirection() -> bool:
 	var new_dir : Vector2 = cardinal_direction
 	if direction == Vector2.ZERO:
@@ -42,11 +54,9 @@ func SetDirection() -> bool:
 	sprite_2d.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1
 	return true
 
-	
 func UpdateAnimation(state : String) -> void:
 	animation_player.play(state + "_" + AnimDirection())
 	pass
-
 
 func AnimDirection() -> String:
 	if cardinal_direction == Vector2.DOWN:
