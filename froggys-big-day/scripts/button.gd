@@ -4,8 +4,8 @@ extends Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var options: Array[String] = ["Open the door", "Check the window", "Walk away", "Wait"]
-	choices.show_options(options)
+	#var options: Array[String] = ["Open the door", "Check the window", "Walk away", "Wait"]
+	#choices.show_options(options)
 	connect("pressed", on_pressed)
 	return
 

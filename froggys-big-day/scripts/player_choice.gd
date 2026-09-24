@@ -1,5 +1,7 @@
 extends RichTextLabel
 
+signal option_selected(index: int)
+
 @onready var dialogue: RichTextLabel = $"../dialogue"
 
 var _options: Array[String] = []
@@ -15,9 +17,12 @@ func show_options(options: Array[String]) -> void:
 	text = ""
 	for i in options.size():
 		append_text("[url=%d]%d. %s[/url]\n" % [i, i + 1, options[i]])
+	
 
 
 func _on_meta_clicked(meta: Variant) -> void:
-	dialogue.append_text("\n" + _options[int(meta)] + "\n")
+	var index := int(meta)
+	dialogue.append_text("\n" + _options[index] + "\n")
 	text = ""
 	dialogue.on_option()
+	option_selected.emit(index)
