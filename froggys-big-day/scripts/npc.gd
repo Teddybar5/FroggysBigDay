@@ -10,7 +10,6 @@ var has_talked = false
 @onready var dialogue_scroll_box: Control = $"../CanvasLayer/DialogueScrollBox"
 @onready var player_choice: RichTextLabel = $"../CanvasLayer/DialogueScrollBox/Panel/VBoxContainer/playerChoice"
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	animation_player.play("idle")
