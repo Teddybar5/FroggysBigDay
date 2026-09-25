@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cr0pboyivlqd3" path="res://scripts/dialogue.gd" id="1_dpdvj"]
 [ext_resource type="Script" uid="uid://c32haqcvmstq" path="res://scripts/player_choice.gd" id="2_5win1"]
-[ext_resource type="Script" uid="uid://46osclyfc3ut" path="res://scripts/button.gd" id="3_jmojv"]
 
 [node name="DialogueScrollBox" type="Control" unique_id=1993323280]
 layout_mode = 3
@@ -36,27 +35,15 @@ grow_vertical = 2
 [node name="dialogue" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=666151755]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 9
+theme_override_font_sizes/normal_font_size = 16
 script = ExtResource("1_dpdvj")
 
 [node name="playerChoice" type="RichTextLabel" parent="Panel/VBoxContainer" unique_id=1276924678]
+custom_maximum_size = Vector2(-1, 200)
 layout_mode = 2
 size_flags_vertical = 3
 mouse_force_pass_scroll_events = false
-theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/normal_font_size = 16
 script = ExtResource("2_5win1")
-
-[node name="Button" type="Button" parent="." unique_id=1090419099]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 106.0
-offset_top = 119.0
-offset_right = -302.0
-offset_bottom = -113.0
-text = "Button"
-script = ExtResource("3_jmojv")
 
 [connection signal="meta_clicked" from="Panel/VBoxContainer/dialogue" to="Panel/VBoxContainer/dialogue" method="_on_meta_clicked"]
