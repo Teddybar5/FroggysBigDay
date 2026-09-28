@@ -12,13 +12,13 @@
 script = ExtResource("1_iwbf0")
 
 [node name="Bg02" type="Sprite2D" parent="." unique_id=451454451]
-position = Vector2(240.5, 136.49998)
-scale = Vector2(0.31445318, 0.36328128)
+position = Vector2(579.5, 323)
+scale = Vector2(0.7558594, 0.84895843)
 texture = ExtResource("1_6jbdy")
 
 [node name="GameTitleLogoTransp" type="Sprite2D" parent="." unique_id=21157108]
-position = Vector2(127.000015, 52.000008)
-scale = Vector2(0.1514654, 0.15652172)
+position = Vector2(314.21875, 132.5)
+scale = Vector2(0.47905722, 0.5065217)
 texture = ExtResource("2_iwbf0")
 
 [node name="ButtonManager" type="Control" parent="." unique_id=999022611]
@@ -29,19 +29,19 @@ offset_bottom = 40.0
 
 [node name="Play" type="TextureButton" parent="ButtonManager" unique_id=1772857110]
 layout_mode = 0
-offset_left = 262.0
-offset_top = 149.0
-offset_right = 358.0
-offset_bottom = 171.0
+offset_left = 618.0
+offset_top = 436.0
+offset_right = 714.0
+offset_bottom = 458.0
 texture_normal = ExtResource("4_e2per")
 texture_pressed = ExtResource("5_7mi0g")
 
 [node name="Quit" type="TextureButton" parent="ButtonManager" unique_id=1246513169]
 layout_mode = 0
-offset_left = 262.0
-offset_top = 181.0
-offset_right = 358.0
-offset_bottom = 203.0
+offset_left = 619.0
+offset_top = 480.0
+offset_right = 715.0
+offset_bottom = 502.0
 texture_normal = ExtResource("6_nqjyj")
 texture_pressed = ExtResource("7_7vr37")
 
