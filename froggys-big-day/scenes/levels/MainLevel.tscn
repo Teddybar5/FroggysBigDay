@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dhpsnoy3sryjx" path="res://scenes/Items/flower_0.tscn" id="6_214bh"]
 [ext_resource type="PackedScene" uid="uid://b7g8rwstj8kft" path="res://scenes/ui/flowerDisplay.tscn" id="6_dnftk"]
 [ext_resource type="PackedScene" uid="uid://c222m6dbnjsie" path="res://scenes/Items/sheers.tscn" id="7_dnftk"]
+[ext_resource type="Script" uid="uid://cysey7gdtxeff" path="res://scripts/skillCheckManager.gd" id="8_3ijqg"]
 
 [node name="MainLevel" type="Node2D" unique_id=1237511554]
 
@@ -45,6 +46,9 @@ position = Vector2(551, 67)
 
 [node name="Sheers" parent="." unique_id=757987813 instance=ExtResource("7_dnftk")]
 position = Vector2(294, -79)
+
+[node name="SkillCheckManager" type="Node" parent="." unique_id=805111120]
+script = ExtResource("8_3ijqg")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1929615817]
 

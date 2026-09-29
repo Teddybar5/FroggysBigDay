@@ -5,6 +5,7 @@ var player_in_range = false
 @onready var player_character: Player = $"../PlayerCharacter"
 @onready var dialogue_box: RichTextLabel = $"../CanvasLayer/DialogueScrollBox/Panel/VBoxContainer/dialogue"
 @onready var dialogue_scroll_box: Control = $"../CanvasLayer/DialogueScrollBox"
+@onready var skill_check_manager: SkillCheckManager = $"../SkillCheckManager"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -32,17 +33,17 @@ func _input(event: InputEvent) -> void:
 		
 func run_dialogue() -> void:
 	dialogue_scroll_box.show()
+	#move to dialogue manager
 	dialogue_box.append_text("Wisdom check...\n")
 	dialogue_box.on_option()
 	await get_tree().create_timer(0.5).timeout
-	if player_character.run_ability_check(0, 1): 
-		dialogue_box.append_text("Success!\n")
-		dialogue_box.on_option()
+	
+	#skill check
+	if skill_check_manager.CheckSkill(0,1): 
 		await get_tree().create_timer(1.0).timeout
 		pick_up_object()
 	else: 
-		dialogue_box.append_text("You failed the check!\n")
-		dialogue_box.on_option()
+		pass
 
 
 func pick_up_object() -> void:

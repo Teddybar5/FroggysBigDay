@@ -32,11 +32,8 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
-func run_ability_check(ability: int, min : int) -> bool:
+func update_stats() -> void:
 	stats = [wisdom, empathy, courage, strength]
-	if stats[ability] >= min:
-		return true
-	return false
 	
 func SetDirection() -> bool:
 	var new_dir : Vector2 = cardinal_direction
