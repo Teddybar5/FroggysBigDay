@@ -34,14 +34,9 @@ func _input(event: InputEvent) -> void:
 func run_dialogue() -> void:
 	dialogue_scroll_box.show()
 	
-	await dialogue_manager.runFlowerDialogue()
-	
-	#skill check
-	#if await skill_check_manager.CheckSkill(3, 2): 
-		#await get_tree().create_timer(1.0).timeout
-		#pick_up_object()
-	#else: 
-		#pass
+	if await dialogue_manager.runFlowerDialogue():
+		pick_up_object()
+
 
 
 func pick_up_object() -> void:

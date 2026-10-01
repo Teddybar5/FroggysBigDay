@@ -8,8 +8,8 @@ var flowers : int = 0
 @export var wisdom : int = 1 
 @export var empathy : int = 1 
 @export var courage : int = 1
-@export var strength : int = 1
-var stats: Array[int] = [wisdom, empathy, courage, strength]
+@export var intelligence : int = 1
+var stats: Array[int] = [wisdom, empathy, courage, intelligence]
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
@@ -33,7 +33,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func update_stats() -> void:
-	stats = [wisdom, empathy, courage, strength]
+	stats = [wisdom, empathy, courage, intelligence]
 	
 func SetDirection() -> bool:
 	var new_dir : Vector2 = cardinal_direction

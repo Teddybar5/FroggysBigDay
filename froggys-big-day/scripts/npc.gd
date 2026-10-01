@@ -14,7 +14,6 @@ var has_talked = false
 func _ready() -> void:
 	animation_player.play("idle")
 	dialogue_scroll_box.hide()
-	player_choice.option_selected.connect(_on_player_choice_selected)
 	
 func _on_interaction_area_body_entered(body: Node2D) -> void:
 	if body.name == "PlayerCharacter":
@@ -48,11 +47,3 @@ func check_flowers() -> void:
 	else:
 		dialogue_box.append_text("Not enough...\n")
 		dialogue_box.on_option()
-
-func _on_player_choice_selected(index: int) -> void:
-	match index:
-		0:
-			dialogue_box.append_text("Great, let's find some flowers!\n")
-		1:
-			dialogue_box.append_text("Fine, be that way.\n")
-	dialogue_box.on_option()
