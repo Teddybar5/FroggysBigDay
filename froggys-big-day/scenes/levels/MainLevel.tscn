@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://brtfdeeglmijt" path="res://scenes/ui/DialogueScrollBox.tscn" id="6_32pff"]
 [ext_resource type="PackedScene" uid="uid://dhpsnoy3sryjx" path="res://scenes/Items/flower_0.tscn" id="6_214bh"]
 [ext_resource type="PackedScene" uid="uid://b7g8rwstj8kft" path="res://scenes/ui/flowerDisplay.tscn" id="6_dnftk"]
+[ext_resource type="Script" uid="uid://bfm4jj0btuheo" path="res://scripts/dialogueManager.gd" id="7_32pff"]
 [ext_resource type="PackedScene" uid="uid://c222m6dbnjsie" path="res://scenes/Items/sheers.tscn" id="7_dnftk"]
 [ext_resource type="Script" uid="uid://cysey7gdtxeff" path="res://scripts/skillCheckManager.gd" id="8_3ijqg"]
 
@@ -22,7 +23,7 @@ tile_map_data = PackedByteArray("AAD9/xgAAAAxAAMAAAD9/xcAAAAyAAEAAAD9/xYAAAAxAAI
 
 [node name="PlayerCharacter" parent="." unique_id=2100650840 instance=ExtResource("1_ngxpg")]
 z_index = 1
-position = Vector2(232, 121)
+position = Vector2(437, 300)
 scale = Vector2(1.5, 1.5)
 
 [node name="Npc0" parent="." unique_id=2014059936 instance=ExtResource("6_3ijqg")]
@@ -30,25 +31,16 @@ position = Vector2(433, 185)
 scale = Vector2(1.5, 1.5)
 
 [node name="Flower0" parent="." unique_id=1809817678 instance=ExtResource("6_214bh")]
-position = Vector2(352, 50)
-
-[node name="Flower1" parent="." unique_id=1295758957 instance=ExtResource("6_214bh")]
-position = Vector2(86, 66)
-
-[node name="Flower2" parent="." unique_id=66205691 instance=ExtResource("6_214bh")]
-position = Vector2(223, 43)
-
-[node name="Flower3" parent="." unique_id=943348552 instance=ExtResource("6_214bh")]
-position = Vector2(60, 202)
-
-[node name="Flower4" parent="." unique_id=839873959 instance=ExtResource("6_214bh")]
-position = Vector2(551, 67)
+position = Vector2(122, 104)
 
 [node name="Sheers" parent="." unique_id=757987813 instance=ExtResource("7_dnftk")]
 position = Vector2(294, -79)
 
 [node name="SkillCheckManager" type="Node" parent="." unique_id=805111120]
 script = ExtResource("8_3ijqg")
+
+[node name="DialogueManager" type="Node" parent="." unique_id=1963797657]
+script = ExtResource("7_32pff")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1929615817]
 

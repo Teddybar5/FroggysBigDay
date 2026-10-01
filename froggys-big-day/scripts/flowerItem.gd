@@ -5,6 +5,7 @@ var player_in_range = false
 @onready var dialogue_box: RichTextLabel = $"../CanvasLayer/DialogueScrollBox/Panel/VBoxContainer/dialogue"
 @onready var dialogue_scroll_box: Control = $"../CanvasLayer/DialogueScrollBox"
 @onready var skill_check_manager: SkillCheckManager = $"../SkillCheckManager"
+@onready var dialogue_manager: DialogueManager = $"../DialogueManager"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -32,15 +33,15 @@ func _input(event: InputEvent) -> void:
 		
 func run_dialogue() -> void:
 	dialogue_scroll_box.show()
-	dialogue_box.append_text("Strength check...\n")
-	dialogue_box.on_option()
-	await get_tree().create_timer(0.5).timeout
+	
+	await dialogue_manager.runFlowerDialogue()
+	
 	#skill check
-	if skill_check_manager.CheckSkill(3, 2): 
-		await get_tree().create_timer(1.0).timeout
-		pick_up_object()
-	else: 
-		pass
+	#if await skill_check_manager.CheckSkill(3, 2): 
+		#await get_tree().create_timer(1.0).timeout
+		#pick_up_object()
+	#else: 
+		#pass
 
 
 func pick_up_object() -> void:
