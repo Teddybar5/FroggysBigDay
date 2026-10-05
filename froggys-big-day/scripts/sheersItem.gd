@@ -43,5 +43,5 @@ func run_dialogue() -> void:
 
 
 func pick_up_object() -> void:
-	player_character.strength = 3
+	player_character.inventory.append("Sheers")
 	queue_free()

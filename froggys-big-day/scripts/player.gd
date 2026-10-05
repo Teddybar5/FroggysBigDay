@@ -11,6 +11,9 @@ var flowers : int = 0
 @export var intelligence : int = 1
 var stats: Array[int] = [wisdom, empathy, courage, intelligence]
 
+#inventory
+var inventory: Array[String] = ["nothing"]
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var state_machine : PlayerStateMachine = $StateMachine

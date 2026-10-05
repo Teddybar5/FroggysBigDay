@@ -38,7 +38,7 @@ func run_dialogue() -> void:
 		pick_up_object()
 
 
-
 func pick_up_object() -> void:
 	player_character.UpdateFlowers(1)
+	player_character.inventory.append("Flowers")
 	queue_free()
