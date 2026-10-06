@@ -41,7 +41,7 @@ func run_dialogue() -> void:
 	
 func check_flowers() -> void:
 	dialogue_scroll_box.show()
-	if player_character.flowers >= 5:
+	if "Flowers" in player_character.inventory:
 		dialogue_box.append_text("Yay you win!\n")
 		dialogue_box.on_option()
 	else:

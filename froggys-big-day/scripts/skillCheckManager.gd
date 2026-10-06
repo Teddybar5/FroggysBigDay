@@ -1,7 +1,7 @@
 class_name SkillCheckManager extends Node
 
 var stats: Array[int] = [0, 0, 0, 0]
-var statNames: Array[String] = ["Wisdon", "Empathy", "Courage", "Strength"]
+var statNames: Array[String] = ["Wisdom", "Empathy", "Courage", "Strength"]
 
 @onready var player_character: Player = $"../PlayerCharacter"
 @onready var dialogue_box: RichTextLabel = $"../CanvasLayer/DialogueScrollBox/Panel/VBoxContainer/dialogue"
