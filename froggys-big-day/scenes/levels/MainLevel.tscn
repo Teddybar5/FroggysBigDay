@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://7crckt4mcknp" path="res://scenes/characters/npc_0.tscn" id="6_3ijqg"]
 [ext_resource type="PackedScene" uid="uid://brtfdeeglmijt" path="res://scenes/ui/DialogueScrollBox.tscn" id="6_32pff"]
 [ext_resource type="PackedScene" uid="uid://dhpsnoy3sryjx" path="res://scenes/Items/flower_0.tscn" id="6_214bh"]
-[ext_resource type="PackedScene" uid="uid://b7g8rwstj8kft" path="res://scenes/ui/flowerDisplay.tscn" id="6_dnftk"]
+[ext_resource type="PackedScene" uid="uid://bfx17ag03b4r7" path="res://scenes/ui/FlyHungerBar.tscn" id="6_dnftk"]
 [ext_resource type="Script" uid="uid://bfm4jj0btuheo" path="res://scripts/dialogueManager.gd" id="7_32pff"]
 [ext_resource type="PackedScene" uid="uid://c222m6dbnjsie" path="res://scenes/Items/sheers.tscn" id="7_dnftk"]
 [ext_resource type="Script" uid="uid://cysey7gdtxeff" path="res://scripts/skillCheckManager.gd" id="8_3ijqg"]
@@ -44,11 +44,7 @@ script = ExtResource("7_32pff")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1929615817]
 
-[node name="FlowerDisplay" parent="CanvasLayer" unique_id=977926036 instance=ExtResource("6_dnftk")]
-offset_left = 1.0
-offset_top = 2.0
-offset_right = 87.0
-offset_bottom = 26.0
+[node name="FlyHungerBar" parent="CanvasLayer" unique_id=1936189282 instance=ExtResource("6_dnftk")]
 
 [node name="DialogueScrollBox" parent="CanvasLayer" unique_id=1993323280 instance=ExtResource("6_32pff")]
 

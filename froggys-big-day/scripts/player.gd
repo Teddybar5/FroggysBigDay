@@ -2,7 +2,6 @@ class_name Player extends CharacterBody2D
 
 var cardinal_direction : Vector2 = Vector2.DOWN
 var direction : Vector2 = Vector2.ZERO
-var flowers : int = 0
 
 #Stat Variables
 @export var wisdom : int = 1 
@@ -17,8 +16,6 @@ var inventory: Array[String] = ["nothing"]
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var state_machine : PlayerStateMachine = $StateMachine
-@onready var flower_display: Label = $"../CanvasLayer/FlowerDisplay"
-
 
 
 # Called when the node enters the scene tree for the first time.
@@ -66,6 +63,3 @@ func AnimDirection() -> String:
 	else:
 		return "side"
 		
-func UpdateFlowers(num : int):
-	flowers = flowers + 1
-	flower_display.UpdateText()
