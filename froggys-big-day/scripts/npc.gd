@@ -1,5 +1,11 @@
 class_name NPC extends CharacterBody2D
 
+#for movement
+@export var speed: float = 40.0
+@export var pace_distance: float = 40.0
+var direction: int = 1
+var start_x: float
+
 var player_in_range = false
 var has_talked = false
 
@@ -12,8 +18,31 @@ var has_talked = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	start_x = global_position.x
 	animation_player.play("idle")
 	dialogue_scroll_box.hide()
+	
+func _physics_process(_delta: float) -> void:
+	if player_in_range:
+		velocity.x = 0
+	else:
+		# turn around at either end of the path, or when hitting a wall
+		if global_position.x >= start_x + pace_distance:
+			direction = -1
+		elif global_position.x <= start_x - pace_distance:
+			direction = 1
+		elif is_on_wall():
+			direction *= -1
+		velocity.x = direction * speed
+	move_and_slide()
+	
+	#add animation later
+	if velocity.x == 0:
+		pass
+		#animation_player.play("idle")
+	else:
+		#animation_player.play("walk")
+		$Sprite2D.flip_h = direction > 0
 	
 func _on_interaction_area_body_entered(body: Node2D) -> void:
 	if body.name == "PlayerCharacter":
