@@ -38,8 +38,8 @@ position = Vector2(122, 104)
 position = Vector2(294, -79)
 
 [node name="fly" parent="." unique_id=643904549 instance=ExtResource("10_fpd5e")]
-position = Vector2(221, 350)
-scale = Vector2(0.2, 0.2)
+position = Vector2(243.5, 329)
+scale = Vector2(1.7, 1.6)
 
 [node name="SkillCheckManager" type="Node" parent="." unique_id=805111120]
 script = ExtResource("8_3ijqg")

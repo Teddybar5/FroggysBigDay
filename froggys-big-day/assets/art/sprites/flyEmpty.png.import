@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdpcli3sp7xfc"
-path="res://.godot/imported/fly-removebg-preview.png-1b8a74a988d02cd260c2a9a53b0a3cf9.ctex"
+uid="uid://b8s4b7l8qfxba"
+path="res://.godot/imported/flyEmpty.png-257dce8983268cafe668f2fdc5454ff2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/sprites/fly-removebg-preview.png"
-dest_files=["res://.godot/imported/fly-removebg-preview.png-1b8a74a988d02cd260c2a9a53b0a3cf9.ctex"]
+source_file="res://assets/art/sprites/flyEmpty.png"
+dest_files=["res://.godot/imported/flyEmpty.png-257dce8983268cafe668f2fdc5454ff2.ctex"]
 
 [params]
 

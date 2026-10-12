@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yxdd10wohr26"
-path="res://.godot/imported/flyempty-removebg-preview.png-2a64fe1da5ac571ff608a544470ebf56.ctex"
+uid="uid://btbljadpuyqvo"
+path="res://.godot/imported/FroggysBigDay.png-a44234ff324cd18e40f86553d0bcc6fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/sprites/flyempty-removebg-preview.png"
-dest_files=["res://.godot/imported/flyempty-removebg-preview.png-2a64fe1da5ac571ff608a544470ebf56.ctex"]
+source_file="res://Builds/build1/FroggysBigDay.png"
+dest_files=["res://.godot/imported/FroggysBigDay.png-a44234ff324cd18e40f86553d0bcc6fc.ctex"]
 
 [params]
 

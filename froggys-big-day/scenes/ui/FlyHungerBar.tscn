@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bfx17ag03b4r7"]
 
 [ext_resource type="Script" uid="uid://bp1uuq8tgxhfm" path="res://scripts/fly_hunger_bar.gd" id="1_wp5pk"]
-[ext_resource type="Texture2D" uid="uid://bdpcli3sp7xfc" path="res://assets/art/sprites/fly-removebg-preview.png" id="2_nk2x1"]
-[ext_resource type="Texture2D" uid="uid://yxdd10wohr26" path="res://assets/art/sprites/flyempty-removebg-preview.png" id="3_gokb6"]
+[ext_resource type="Texture2D" uid="uid://dbhkxyknf0agn" path="res://assets/art/sprites/flyFull.png" id="2_nk2x1"]
+[ext_resource type="Texture2D" uid="uid://b8s4b7l8qfxba" path="res://assets/art/sprites/flyEmpty.png" id="3_gokb6"]
 
 [node name="FlyHungerBar" type="HBoxContainer" unique_id=1936189282]
 anchors_preset = -1

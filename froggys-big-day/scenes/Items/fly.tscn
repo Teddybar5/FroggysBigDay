@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cx12jlngqg8e1"]
 
-[ext_resource type="Texture2D" uid="uid://bdpcli3sp7xfc" path="res://assets/art/sprites/fly-removebg-preview.png" id="1_8l78d"]
+[ext_resource type="Texture2D" uid="uid://dbhkxyknf0agn" path="res://assets/art/sprites/flyFull.png" id="1_8l78d"]
 [ext_resource type="Script" uid="uid://bpbwvajq205ej" path="res://scripts/flyItem.gd" id="2_8l78d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5inxd"]
-radius = 87.02299
+radius = 24.738634
 
 [node name="fly" type="Sprite2D" unique_id=1809817678]
 texture = ExtResource("1_8l78d")
