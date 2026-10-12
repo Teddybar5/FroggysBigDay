@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bfm4jj0btuheo" path="res://scripts/dialogueManager.gd" id="7_32pff"]
 [ext_resource type="PackedScene" uid="uid://c222m6dbnjsie" path="res://scenes/Items/sheers.tscn" id="7_dnftk"]
 [ext_resource type="Script" uid="uid://cysey7gdtxeff" path="res://scripts/skillCheckManager.gd" id="8_3ijqg"]
+[ext_resource type="PackedScene" uid="uid://cx12jlngqg8e1" path="res://scenes/Items/fly.tscn" id="10_fpd5e"]
 
 [node name="MainLevel" type="Node2D" unique_id=1237511554]
 
@@ -35,6 +36,10 @@ position = Vector2(122, 104)
 
 [node name="Sheers" parent="." unique_id=757987813 instance=ExtResource("7_dnftk")]
 position = Vector2(294, -79)
+
+[node name="fly" parent="." unique_id=643904549 instance=ExtResource("10_fpd5e")]
+position = Vector2(221, 350)
+scale = Vector2(0.2, 0.2)
 
 [node name="SkillCheckManager" type="Node" parent="." unique_id=805111120]
 script = ExtResource("8_3ijqg")
