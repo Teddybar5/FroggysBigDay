@@ -142,5 +142,49 @@ func runShearsDialogue() -> bool:
 			
 	return false
 
-func runTortieDialogue() -> bool:
-	return false
+func runTortieDialogue(hasTalked: bool, hasFlowers: bool) -> void:
+	if not hasTalked:
+		dialogue.append_text("\nYou come across a turtle pacing back and forth frantically.\n")
+		dialogue.on_option()
+		await get_tree().create_timer(1.0).timeout
+		dialogue.append_text("TORTIE: Oh man... I don't know what to do...\n")
+		dialogue.on_option()
+		await get_tree().create_timer(1.0).timeout
+		#options
+		var options: Array[String] = ["What's going on here?"]
+		player_choice.show_options(options)
+		dialogue.on_option()
+		var choice: int = await player_choice.ask(options)
+		
+		match choice:
+			0:
+				dialogue.append_text("TORTIE: Well, it's Mother's day soon and I wanted to get some flowers for my mom...\n")
+				dialogue.on_option()
+				await get_tree().create_timer(1.5).timeout
+				dialogue.append_text("TORTIE: BUT, the only flowers I could find are those over there, and they are surrounded by thorns...\n")
+				dialogue.on_option()
+				await get_tree().create_timer(1.5).timeout
+				var options1: Array[String] = ["I can help you!"]
+				player_choice.show_options(options1)
+				dialogue.on_option()
+				var choice1: int = await player_choice.ask(options1)
+				
+				match choice1:
+					0:
+						dialogue.append_text("TORTIE: Really!?! Thank you so much!!! Come back to me once you've got them!\n")
+						dialogue.on_option()
+						await get_tree().create_timer(1.5).timeout
+		
+		
+	else:
+		if hasFlowers:
+			dialogue.append_text("\nTORTIE: Oh my goodness thank you so much!! These are so perfect.\n")
+			dialogue.on_option()
+			await get_tree().create_timer(1.0).timeout
+			dialogue.append_text("TORTIE: Here, follow me I'll take you back to our village you have to meet everyone!\n")
+			dialogue.on_option()
+			await get_tree().create_timer(1.0).timeout
+		else:
+			dialogue.append_text("\nTORTIE: I don't think you have the flowers yet...\n")
+			dialogue.on_option()
+			await get_tree().create_timer(1.0).timeout

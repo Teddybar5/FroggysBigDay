@@ -2,6 +2,7 @@ class_name Player extends CharacterBody2D
 
 var cardinal_direction : Vector2 = Vector2.DOWN
 var direction : Vector2 = Vector2.ZERO
+var can_move : bool = true
 
 #Stat Variables
 @export var wisdom : int = 1 
@@ -26,10 +27,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	direction = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down")).normalized()
-	pass
+	if can_move:
+		direction = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down")).normalized()
+	else:
+		direction = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
+	if not can_move:
+		velocity = Vector2.ZERO
 	move_and_slide()
 	
 func update_stats() -> void:

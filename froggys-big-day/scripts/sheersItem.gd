@@ -34,14 +34,17 @@ func _input(event: InputEvent) -> void:
 		
 func run_dialogue() -> void:
 	dialogue_scroll_box.show()
-
+	player_character.can_move = false
+	
 	#skill check
 	if await dialogue_manager.runShearsDialogue(): 
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(2.0).timeout
 		pick_up_object()
+		player_character.can_move = true
 	else: 
 		await get_tree().create_timer(2.0).timeout
 		queue_free()
+		player_character.can_move = true
 		#fun particle effect here
 
 

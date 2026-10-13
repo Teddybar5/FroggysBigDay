@@ -15,12 +15,15 @@ var has_talked = false
 @onready var dialogue_box: RichTextLabel = $"../CanvasLayer/DialogueScrollBox/Panel/VBoxContainer/dialogue"
 @onready var dialogue_scroll_box: Control = $"../CanvasLayer/DialogueScrollBox"
 @onready var player_choice: RichTextLabel = $"../CanvasLayer/DialogueScrollBox/Panel/VBoxContainer/playerChoice"
+@onready var dialogue_manager: DialogueManager = $"../DialogueManager"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	start_x = global_position.x
 	animation_player.play("idle")
 	dialogue_scroll_box.hide()
+	add_collision_exception_with(player_character)
+	player_character.add_collision_exception_with(self)
 	
 func _physics_process(_delta: float) -> void:
 	if player_in_range:
@@ -61,18 +64,17 @@ func _input(event: InputEvent) -> void:
 	
 func run_dialogue() -> void:
 	dialogue_scroll_box.show()
-	dialogue_box.append_text("I need help finding flowers for my mom!\n")
-	var options: Array[String] = ["Okay, I can help you", "Figure it our yourself!"]
-	player_choice.show_options(options)
-	
-	dialogue_box.on_option()
+	player_character.can_move = false
+	await dialogue_manager.runTortieDialogue(has_talked, false)
 	has_talked = true
+	player_character.can_move = true
 	
 func check_flowers() -> void:
 	dialogue_scroll_box.show()
 	if "Flowers" in player_character.inventory:
-		dialogue_box.append_text("Yay you win!\n")
-		dialogue_box.on_option()
+		await dialogue_manager.runTortieDialogue(has_talked, true)
+		#START COOL CUTSCENE
+		await get_tree().create_timer(1.0).timeout
+		get_tree().change_scene_to_file("res://scenes/levels/TortieCutscene.tscn")	
 	else:
-		dialogue_box.append_text("Not enough...\n")
-		dialogue_box.on_option()
+		await dialogue_manager.runTortieDialogue(has_talked, false)
