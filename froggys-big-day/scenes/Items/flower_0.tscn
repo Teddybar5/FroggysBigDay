@@ -1,16 +1,25 @@
 [gd_scene format=3 uid="uid://dhpsnoy3sryjx"]
 
 [ext_resource type="Texture2D" uid="uid://caxg44uoqpn4y" path="res://assets/art/sprites/flowers/Flower 8 - RED.png" id="1_ie8mx"]
+[ext_resource type="Shader" uid="uid://bf14xac8nlwnd" path="res://scenes/Items/flower_0.gdshader" id="1_y1up0"]
 [ext_resource type="Script" uid="uid://0ncqwt4rqj17" path="res://scripts/flowerItem.gd" id="2_hlt1y"]
 [ext_resource type="Texture2D" uid="uid://d3sw44e11c56i" path="res://assets/art/sprites/flowers/Flower 8 - YELLOW.png" id="3_cpf4u"]
 [ext_resource type="Texture2D" uid="uid://cglr2syboyjn2" path="res://assets/art/sprites/flowers/Flower 7 - PINK 2.png" id="4_y1up0"]
 [ext_resource type="Texture2D" uid="uid://d1tgogi462p7t" path="res://assets/art/sprites/flowers/Flower 5 - PINK.png" id="5_rr62d"]
 [ext_resource type="Texture2D" uid="uid://sv8cwsqc7yej" path="res://assets/art/sprites/flowers/Flower 9 - PURPLE.png" id="6_0jtxr"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1x1s3"]
+shader = ExtResource("1_y1up0")
+shader_parameter/strength = 0.2
+shader_parameter/speed = 2.0
+shader_parameter/spread = 1.0
+shader_parameter/gust = 0.802000038095
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_5inxd"]
 radius = 47.042534
 
 [node name="Flower0" type="Sprite2D" unique_id=1809817678]
+material = SubResource("ShaderMaterial_1x1s3")
 texture = ExtResource("1_ie8mx")
 script = ExtResource("2_hlt1y")
 
@@ -20,26 +29,31 @@ script = ExtResource("2_hlt1y")
 shape = SubResource("CircleShape2D_5inxd")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Area2D" unique_id=600206505]
+material = SubResource("ShaderMaterial_1x1s3")
 position = Vector2(14.036896, -7.1924973)
 scale = Vector2(0.9284139, 0.9522416)
 texture = ExtResource("3_cpf4u")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=586747631]
+material = SubResource("ShaderMaterial_1x1s3")
 position = Vector2(18.75, 2.5)
 scale = Vector2(0.7941176, 0.8333333)
 texture = ExtResource("4_y1up0")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1862903496]
+material = SubResource("ShaderMaterial_1x1s3")
 position = Vector2(-18.75, 3)
 scale = Vector2(0.9117647, 0.875)
 texture = ExtResource("5_rr62d")
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=704821538]
+material = SubResource("ShaderMaterial_1x1s3")
 position = Vector2(-8, 17.999998)
 scale = Vector2(0.9117647, 0.875)
 texture = ExtResource("1_ie8mx")
 
 [node name="Sprite2D4" type="Sprite2D" parent="." unique_id=372997918]
+material = SubResource("ShaderMaterial_1x1s3")
 position = Vector2(7.8088236, 18.796875)
 scale = Vector2(0.5136554, 0.56758714)
 texture = ExtResource("6_0jtxr")
