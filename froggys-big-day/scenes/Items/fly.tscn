@@ -1,14 +1,21 @@
 [gd_scene format=3 uid="uid://cx12jlngqg8e1"]
 
+[ext_resource type="Texture2D" uid="uid://btflijfol8477" path="res://assets/art/sprites/Shadow.png" id="1_6yuav"]
 [ext_resource type="Texture2D" uid="uid://dbhkxyknf0agn" path="res://assets/art/sprites/flyFull.png" id="1_8l78d"]
 [ext_resource type="Script" uid="uid://bpbwvajq205ej" path="res://scripts/flyItem.gd" id="2_8l78d"]
+[ext_resource type="PackedScene" uid="uid://bprusydftxf2j" path="res://scenes/Items/flyFlock.tscn" id="3_jk31x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5inxd"]
 radius = 24.738634
 
 [node name="fly" type="Sprite2D" unique_id=1809817678]
-texture = ExtResource("1_8l78d")
+texture = ExtResource("1_6yuav")
 script = ExtResource("2_8l78d")
+
+[node name="FlyFlock" parent="." unique_id=1136187625 instance=ExtResource("3_jk31x")]
+scale = Vector2(0.5, 0.5)
+count = 50
+fly_texture = ExtResource("1_8l78d")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1958706635]
 
