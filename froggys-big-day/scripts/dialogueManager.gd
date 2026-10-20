@@ -8,6 +8,7 @@ class_name DialogueManager extends Node
 
 	
 func runFlowerDialogue() -> bool:
+	dialogue.clear_dialogue()
 	dialogue.append_text("\nYou come across a group of flowers together in a field.\n")
 	dialogue.on_option()
 	await get_tree().create_timer(1.0).timeout
@@ -32,6 +33,7 @@ func runFlowerDialogue() -> bool:
 			else:
 				dialogue.append_text("The thorns are just too scary, you try to move but your feet feel glued to the ground.\n\n")
 				dialogue.on_option()
+				await get_tree().create_timer(1.5).timeout
 		1:
 			#Check for shears
 			if "Shears" in player_character.inventory:
@@ -42,6 +44,7 @@ func runFlowerDialogue() -> bool:
 			else:
 				dialogue.append_text("You rummage through your bag for a pair of shears that you are certain you do not have.\n\n")
 				dialogue.on_option()
+				await get_tree().create_timer(1.5).timeout
 		2: 
 			#Check Empathy
 			if await skill_check_manager.CheckSkill(1, 2):
@@ -57,9 +60,11 @@ func runFlowerDialogue() -> bool:
 			else:
 				dialogue.append_text("The thorns seem unfathomably prickly and unreasonable, they stare at you, almost as if they are laughing.\n\n")
 				dialogue.on_option()
+				await get_tree().create_timer(1.5).timeout
 	return false
 	
 func runShearsDialogue() -> bool:
+	dialogue.clear_dialogue()
 	dialogue.append_text("\nA pair of shears lay helplessly on the floor\n")
 	dialogue.on_option()
 	await get_tree().create_timer(0.5).timeout
@@ -143,6 +148,7 @@ func runShearsDialogue() -> bool:
 	return false
 
 func runTortieDialogue(hasTalked: bool, hasFlowers: bool) -> void:
+	dialogue.clear_dialogue()
 	if not hasTalked:
 		dialogue.append_text("\nYou come across a turtle pacing back and forth frantically.\n")
 		dialogue.on_option()
@@ -183,7 +189,7 @@ func runTortieDialogue(hasTalked: bool, hasFlowers: bool) -> void:
 			await get_tree().create_timer(1.0).timeout
 			dialogue.append_text("TORTIE: Here, follow me I'll take you back to our village you have to meet everyone!\n")
 			dialogue.on_option()
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(2.5).timeout
 		else:
 			dialogue.append_text("\nTORTIE: I don't think you have the flowers yet...\n")
 			dialogue.on_option()

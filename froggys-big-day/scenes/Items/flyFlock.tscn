@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bprusydftxf2j"]
 
-[ext_resource type="Script" uid="uid://djet8xdov3ecb" path="res://scenes/Items/flock.gd" id="1_n1jq4"]
+[ext_resource type="Script" uid="uid://djet8xdov3ecb" path="res://scripts/flock.gd" id="1_n1jq4"]
 
 [node name="FlyFlock" type="Node2D" unique_id=1136187625]
 script = ExtResource("1_n1jq4")
