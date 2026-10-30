@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://bq50m6q0i4t5u"]
+
+[ext_resource type="Script" uid="uid://cqchtwqel3tem" path="res://quests/quest.gd" id="1_l4se1"]
+
+[resource]
+script = ExtResource("1_l4se1")
+id = "001"
+title = "Test2"
+description = "This is another test, lets hope it still works, a lot of information can go here and stuff"
+objectives = Array[String](["Complete task 1"])
+metadata/_custom_type_script = "uid://cqchtwqel3tem"

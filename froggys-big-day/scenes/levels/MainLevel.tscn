@@ -13,6 +13,7 @@
 [ext_resource type="Shader" uid="uid://d11lkdsbrqmy6" path="res://scenes/levels/MainLevel.gdshader" id="11_qb1ua"]
 [ext_resource type="Texture2D" uid="uid://c2v5aorduu02o" path="res://assets/art/sprites/TV.png" id="11_xw3i5"]
 [ext_resource type="Script" uid="uid://dtjfgsnlrmliv" path="res://scripts/filter.gd" id="12_1x1s3"]
+[ext_resource type="PackedScene" uid="uid://6snwrejtmlib" path="res://scenes/ui/QuestMenu.tscn" id="14_viy5o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ri2x3"]
 shader = ExtResource("11_qb1ua")
@@ -102,5 +103,7 @@ layer = 2
 position = Vector2(958.49994, 538.25006)
 scale = Vector2(0.90028083, 0.9004166)
 texture = ExtResource("11_xw3i5")
+
+[node name="QuestMenu" parent="." unique_id=968596364 instance=ExtResource("14_viy5o")]
 
 [editable path="CanvasLayer/DialogueScrollBox"]
