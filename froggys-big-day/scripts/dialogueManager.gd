@@ -180,6 +180,7 @@ func runTortieDialogue(hasTalked: bool, hasFlowers: bool) -> void:
 						dialogue.append_text("TORTIE: Really!?! Thank you so much!!! Come back to me once you've got them!\n")
 						dialogue.on_option()
 						await get_tree().create_timer(1.5).timeout
+						QuestManager.accept_quest("tortie_quest")
 		
 		
 	else:

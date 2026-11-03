@@ -45,7 +45,7 @@ func close_menu() -> void:
 #rebuild the list from QuestManager
 func refresh_quest_list() -> void:
 	quest_list.clear()
-	for quest in QuestManager.quests:
+	for quest in QuestManager.active_quests:
 		var index := quest_list.add_item(quest.title)
 		quest_list.set_item_metadata(index, quest)
 	clear_details()

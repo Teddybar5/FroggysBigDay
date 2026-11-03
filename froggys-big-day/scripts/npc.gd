@@ -68,6 +68,7 @@ func run_dialogue() -> void:
 	await dialogue_manager.runTortieDialogue(has_talked, false)
 	has_talked = true
 	player_character.can_move = true
+	dialogue_scroll_box.hide()
 	
 func check_flowers() -> void:
 	dialogue_scroll_box.show()

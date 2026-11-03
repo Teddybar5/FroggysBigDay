@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cc32ueq3ht6g5"]
+
+[ext_resource type="Script" uid="uid://0e5xv2y11c6r" path="res://scripts/mini_map.gd" id="1_8xvh0"]
+[ext_resource type="Texture2D" uid="uid://dbhkxyknf0agn" path="res://assets/art/sprites/flyFull.png" id="1_cgwgp"]
+
+[node name="MiniMap" type="CanvasLayer" unique_id=186908797]
+script = ExtResource("1_8xvh0")
+
+[node name="Frame" type="PanelContainer" parent="." unique_id=691350073]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -512.0
+offset_right = 512.0
+grow_vertical = 0
+
+[node name="Overlay" type="Control" parent="Frame" unique_id=1526167707]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Frame/Overlay" unique_id=1122302935]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 512.0
+mouse_filter = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Frame/Overlay/SubViewportContainer" unique_id=682664155]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="Frame/Overlay/SubViewportContainer/SubViewport" unique_id=1087636775]
+zoom = Vector2(0.5, 0.5)
+
+[node name="FrogIcon" type="TextureRect" parent="Frame/Overlay" unique_id=1452577435]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cgwgp")
