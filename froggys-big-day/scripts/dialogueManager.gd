@@ -62,7 +62,7 @@ func runFlowerDialogue() -> bool:
 				dialogue.on_option()
 				await get_tree().create_timer(1.5).timeout
 	return false
-	
+
 func runShearsDialogue() -> bool:
 	dialogue.clear_dialogue()
 	dialogue.append_text("\nA pair of shears lay helplessly on the floor\n")
