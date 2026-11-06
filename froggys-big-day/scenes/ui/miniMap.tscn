@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://cc32ueq3ht6g5"]
 
+[ext_resource type="Shader" uid="uid://djpqdslylwt1" path="res://scenes/ui/miniMap.gdshader" id="1_3w60j"]
 [ext_resource type="Script" uid="uid://5lstme8rcx8e" path="res://scenes/ui/mapview.gd" id="1_8xvh0"]
 [ext_resource type="Texture2D" uid="uid://dbhkxyknf0agn" path="res://assets/art/sprites/flyFull.png" id="1_cgwgp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qd7ug"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7j3l0"]
+shader = ExtResource("1_3w60j")
+shader_parameter/map_size = Vector2(120, 120)
 
 [node name="MiniMap" type="CanvasLayer" unique_id=186908797]
 
@@ -12,8 +19,10 @@ anchor_bottom = 1.0
 offset_top = -356.0
 offset_right = 346.0
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qd7ug")
 
 [node name="Mapview" type="Control" parent="Frame" unique_id=1526167707]
+material = SubResource("ShaderMaterial_7j3l0")
 custom_minimum_size = Vector2(100, 200)
 clip_contents = true
 layout_mode = 2
