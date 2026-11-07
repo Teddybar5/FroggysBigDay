@@ -9,7 +9,6 @@ extends CanvasLayer
 @onready var description_label: RichTextLabel = $Panel/MarginContainer/VBoxContainer/HSplitContainer/MainQuests/QuestDetails/Description
 @onready var objectives_box: VBoxContainer = $Panel/MarginContainer/VBoxContainer/HSplitContainer/MainQuests/QuestDetails/Objectives
 
-
 func _ready() -> void:
 	#Keep working while the game is paused
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -68,12 +67,18 @@ func show_quest(quest: Quest) -> void:
 	#Remove old objective labels
 	for child in objectives_box.get_children():
 		child.queue_free()
+	
+	var pixel_font = FontVariation.new()
+	pixel_font.base_font = load("res://assets/fonts/PixelifySans-VariableFont_wght.ttf")
 
 	#Add one label per objective
 	for objective in quest.objectives:
 		var label := Label.new()
 		label.text = "• " + objective
 		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		label.add_theme_font_override("font", pixel_font)
+		label.add_theme_font_size_override("font_size", 24)
+		label.add_theme_color_override("font_color", Color(0.42, 0.64, 0.28))
 		objectives_box.add_child(label)
 
 #empty the details panel
