@@ -1,13 +1,13 @@
 extends CanvasLayer
 
 @onready var panel: Control = $Panel
-@onready var quest_list: ItemList = $Panel/MarginContainer/VBoxContainer/HSplitContainer/QuestList
-@onready var close_button: Button = $Panel/MarginContainer/VBoxContainer/CloseButton
+@onready var quest_list: ItemList = $Panel/MarginContainer/VBoxContainer/HSplitContainer/MainQuests/QuestList
+@onready var close_button: TextureButton = $Panel/CloseButton
 
 # New: details panel references
-@onready var quest_name_label: Label = $Panel/MarginContainer/VBoxContainer/HSplitContainer/QuestDetails/QuestName
-@onready var description_label: RichTextLabel = $Panel/MarginContainer/VBoxContainer/HSplitContainer/QuestDetails/Description
-@onready var objectives_box: VBoxContainer = $Panel/MarginContainer/VBoxContainer/HSplitContainer/QuestDetails/Objectives
+@onready var quest_name_label: Label = $Panel/MarginContainer/VBoxContainer/HSplitContainer/MainQuests/QuestDetails/QuestName
+@onready var description_label: RichTextLabel = $Panel/MarginContainer/VBoxContainer/HSplitContainer/MainQuests/QuestDetails/Description
+@onready var objectives_box: VBoxContainer = $Panel/MarginContainer/VBoxContainer/HSplitContainer/MainQuests/QuestDetails/Objectives
 
 
 func _ready() -> void:
@@ -35,7 +35,7 @@ func open_menu() -> void:
 	print("List size: ", quest_list.size)
 	print("Max columns: ", quest_list.max_columns)
 	print("Row 0 rect: ", quest_list.get_item_rect(0))
-	print("Row 1 rect: ", quest_list.get_item_rect(1))
+	#print("Row 1 rect: ", quest_list.get_item_rect(1))
 	get_tree().paused = true
 
 func close_menu() -> void:
@@ -82,3 +82,7 @@ func clear_details() -> void:
 	description_label.text = ""
 	for child in objectives_box.get_children():
 		child.queue_free()
+
+
+func _on_close_button_pressed() -> void:
+	pass # Replace with function body.
