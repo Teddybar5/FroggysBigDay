@@ -14,7 +14,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
@@ -35,9 +35,9 @@ func run_dialogue() -> void:
 	dialogue_scroll_box.show()
 	player_character.can_move = false
 	
-	if await dialogue_manager.runFlowerDialogue():
-		player_character.can_move = true
-		pick_up_object()
+	#if await dialogue_manager.runFlowerDialogue():
+		#player_character.can_move = true
+		#pick_up_object()
 
 	await get_tree().create_timer(1.5).timeout
 	dialogue_scroll_box.hide()

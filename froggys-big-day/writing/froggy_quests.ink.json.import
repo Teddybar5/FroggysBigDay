@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://dl10m5x31e2il"
+path="res://.godot/imported/froggy_quests.ink.json-b61595f2d1136c13a33cdc5e30e2cb61.res"
+
+[deps]
+
+source_file="res://writing/froggy_quests.ink.json"
+dest_files=["res://.godot/imported/froggy_quests.ink.json-b61595f2d1136c13a33cdc5e30e2cb61.res"]
+
+[params]
+
+compress=true

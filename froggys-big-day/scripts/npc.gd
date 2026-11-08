@@ -16,6 +16,8 @@ var has_talked = false
 @onready var dialogue_scroll_box: Control = $"../CanvasLayer/DialogueScrollBox"
 @onready var player_choice: RichTextLabel = $"../CanvasLayer/DialogueScrollBox/Panel/VBoxContainer/playerChoice"
 @onready var dialogue_manager: DialogueManager = $"../DialogueManager"
+@onready var ink_dialogue_manager: InkDialogueManager = $"../INKDialogueManager"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -65,17 +67,15 @@ func _input(event: InputEvent) -> void:
 func run_dialogue() -> void:
 	dialogue_scroll_box.show()
 	player_character.can_move = false
-	await dialogue_manager.runTortieDialogue(has_talked, false)
+	
+	await ink_dialogue_manager.start_dialogue("piggy", {
+		"has_gems": "Gems" in player_character.inventory,
+	})
+	await get_tree().create_timer(2.0).timeout
+	
 	has_talked = true
 	player_character.can_move = true
 	dialogue_scroll_box.hide()
 	
 func check_flowers() -> void:
-	dialogue_scroll_box.show()
-	if "Flowers" in player_character.inventory:
-		await dialogue_manager.runTortieDialogue(has_talked, true)
-		#START COOL CUTSCENE
-		await get_tree().create_timer(1.0).timeout
-		get_tree().change_scene_to_file("res://scenes/levels/TortieCutscene.tscn")	
-	else:
-		await dialogue_manager.runTortieDialogue(has_talked, false)
+	pass

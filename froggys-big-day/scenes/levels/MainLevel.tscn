@@ -9,8 +9,11 @@
 [ext_resource type="Script" uid="uid://bfm4jj0btuheo" path="res://scripts/dialogueManager.gd" id="7_32pff"]
 [ext_resource type="PackedScene" uid="uid://c222m6dbnjsie" path="res://scenes/Items/sheers.tscn" id="7_dnftk"]
 [ext_resource type="Script" uid="uid://cysey7gdtxeff" path="res://scripts/skillCheckManager.gd" id="8_3ijqg"]
+[ext_resource type="Script" uid="uid://b817bd38b4kjo" path="res://writing/ink_dialogue_manager.gd" id="9_qd7ug"]
+[ext_resource type="Script" uid="uid://eop8wk11brc2" path="res://addons/inkgd/ink_player.gd" id="10_dt23x"]
 [ext_resource type="PackedScene" uid="uid://cx12jlngqg8e1" path="res://scenes/Items/fly.tscn" id="10_fpd5e"]
 [ext_resource type="Shader" uid="uid://d11lkdsbrqmy6" path="res://scenes/levels/MainLevel.gdshader" id="11_qb1ua"]
+[ext_resource type="Resource" uid="uid://dl10m5x31e2il" path="res://writing/froggy_quests.ink.json" id="11_sqrxc"]
 [ext_resource type="Script" uid="uid://dtjfgsnlrmliv" path="res://scripts/filter.gd" id="12_1x1s3"]
 [ext_resource type="PackedScene" uid="uid://cc32ueq3ht6g5" path="res://scenes/ui/miniMap.tscn" id="14_qd7ug"]
 [ext_resource type="PackedScene" uid="uid://6snwrejtmlib" path="res://scenes/ui/QuestMenu.tscn" id="14_viy5o"]
@@ -64,6 +67,14 @@ script = ExtResource("8_3ijqg")
 
 [node name="DialogueManager" type="Node" parent="." unique_id=1963797657]
 script = ExtResource("7_32pff")
+
+[node name="INKDialogueManager" type="Node" parent="." unique_id=1818420160]
+script = ExtResource("9_qd7ug")
+
+[node name="InkPlayer" type="Node" parent="INKDialogueManager" unique_id=507403460]
+script = ExtResource("10_dt23x")
+ink_file = ExtResource("11_sqrxc")
+metadata/_custom_type_script = "uid://eop8wk11brc2"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1929615817]
 
