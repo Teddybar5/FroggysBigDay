@@ -1,0 +1,779 @@
+[gd_scene format=3 uid="uid://6snwrejtmlib"]
+
+[ext_resource type="Script" uid="uid://dfdd0oiyaiox3" path="res://scripts/quest_menu.gd" id="1_ctxka"]
+[ext_resource type="Shader" uid="uid://3cetv4k4xd5y" path="res://scenes/ui/QuestMenuBackground.gdshader" id="2_c1fwl"]
+[ext_resource type="FontFile" uid="uid://dgo30tq4om5j7" path="res://assets/fonts/Jacquard24-Regular.ttf" id="2_h75dq"]
+[ext_resource type="FontFile" uid="uid://j7a6jmr4yv4f" path="res://assets/fonts/Eggmode-Pd8g.ttf" id="2_p7262"]
+[ext_resource type="Texture2D" uid="uid://cfdpjer3t3cy6" path="res://assets/art/book/frame_059.png" id="4_3e1qq"]
+[ext_resource type="Texture2D" uid="uid://sdruvkppxdeq" path="res://assets/art/book/frame_060.png" id="5_ev2dr"]
+[ext_resource type="Texture2D" uid="uid://b7pt51kivx3hj" path="res://assets/art/book/frame_061.png" id="6_l5r6c"]
+[ext_resource type="Texture2D" uid="uid://dfkdrh5we1eqw" path="res://assets/art/book/frame_062.png" id="7_dy34p"]
+[ext_resource type="Texture2D" uid="uid://cvm1vnb2ftada" path="res://assets/art/book/frame_063.png" id="8_5y7bn"]
+[ext_resource type="Texture2D" uid="uid://cl811ap2ai4pa" path="res://assets/art/book/frame_064.png" id="9_d861f"]
+[ext_resource type="Texture2D" uid="uid://c5wkouicct8a2" path="res://assets/art/book/frame_065.png" id="10_vjt2y"]
+[ext_resource type="Texture2D" uid="uid://dinpwq7vmsp2e" path="res://assets/art/book/frame_066.png" id="11_mf5h0"]
+[ext_resource type="Texture2D" uid="uid://f3f1bxqxwbig" path="res://assets/art/book/frame_067.png" id="12_ffg5r"]
+[ext_resource type="Texture2D" uid="uid://bsqb7d481np0" path="res://assets/art/book/frame_068.png" id="13_pca8q"]
+[ext_resource type="Texture2D" uid="uid://b4toqe3dxbfdq" path="res://assets/art/book/frame_069.png" id="14_lbtro"]
+[ext_resource type="Texture2D" uid="uid://oj71ssw7vamy" path="res://assets/art/book/frame_070.png" id="15_sbuis"]
+[ext_resource type="Texture2D" uid="uid://dbusxn5meoemp" path="res://assets/art/book/frame_000.png" id="16_3tuuy"]
+[ext_resource type="Texture2D" uid="uid://cut7sdntiqdkq" path="res://assets/art/book/frame_001.png" id="17_853iu"]
+[ext_resource type="Texture2D" uid="uid://5xuar7vbi6" path="res://assets/art/book/frame_002.png" id="18_72i3m"]
+[ext_resource type="Texture2D" uid="uid://bgt5pt0nn3q7x" path="res://assets/art/book/frame_003.png" id="19_uffjm"]
+[ext_resource type="Texture2D" uid="uid://csri0vak6tx6b" path="res://assets/art/book/frame_004.png" id="20_07kaq"]
+[ext_resource type="Texture2D" uid="uid://blx1yh36qt8fh" path="res://assets/art/book/frame_005.png" id="21_x4xnq"]
+[ext_resource type="Texture2D" uid="uid://co87d2wnwybyd" path="res://assets/art/book/frame_006.png" id="22_0kk3e"]
+[ext_resource type="Texture2D" uid="uid://dii6mb0166doi" path="res://assets/art/book/frame_007.png" id="23_ykyxh"]
+[ext_resource type="Texture2D" uid="uid://rm0wmd7701rc" path="res://assets/art/book/frame_008.png" id="24_ni77b"]
+[ext_resource type="Texture2D" uid="uid://cuk0c48p6llh3" path="res://assets/art/book/frame_009.png" id="25_qtixf"]
+[ext_resource type="Texture2D" uid="uid://ckb3ws8mpvgyl" path="res://assets/art/book/frame_010.png" id="26_65dc0"]
+[ext_resource type="Texture2D" uid="uid://ixhqd0th3vpu" path="res://assets/art/book/frame_011.png" id="27_sl3kt"]
+[ext_resource type="Texture2D" uid="uid://l7r2r3wxfmjf" path="res://assets/art/book/frame_014.png" id="30_seln1"]
+[ext_resource type="Texture2D" uid="uid://iasp260ypipr" path="res://assets/art/book/IdleMainTab.png" id="31_3e1qq"]
+[ext_resource type="Texture2D" uid="uid://ld3jvo1wjjgd" path="res://assets/art/book/frame_015.png" id="31_juduj"]
+[ext_resource type="Texture2D" uid="uid://b3giouq60ohoh" path="res://assets/art/book/HoverMainTab.png" id="32_dy34p"]
+[ext_resource type="Texture2D" uid="uid://bvl8vutbcs71g" path="res://assets/art/book/IdleSideTab.png" id="32_ev2dr"]
+[ext_resource type="Texture2D" uid="uid://cf1uu23ok17b" path="res://assets/art/book/IdleCloseTab.png" id="33_l5r6c"]
+[ext_resource type="Texture2D" uid="uid://dmbiee6mwmvpx" path="res://assets/art/book/HoverSideTab.png" id="34_d861f"]
+[ext_resource type="Texture2D" uid="uid://d0nr0gx24w1po" path="res://assets/art/book/HoverCloseTab.png" id="36_vjt2y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lpkyb"]
+shader = ExtResource("2_c1fwl")
+shader_parameter/blur_amount = 2.5
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lpkyb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_3e1qq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ev2dr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_l5r6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dy34p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5y7bn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d861f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vjt2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mf5h0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ffg5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_pca8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lbtro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_sbuis")
+}],
+"loop": 0,
+"name": &"Close",
+"speed": 18.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"MainSwitch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_3tuuy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_853iu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_72i3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_uffjm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_07kaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_x4xnq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_0kk3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ykyxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ni77b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_qtixf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_65dc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_sl3kt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_seln1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_juduj")
+}],
+"loop": 0,
+"name": &"Open",
+"speed": 18.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"SideSwitch",
+"speed": 9.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ekeme"]
+
+[sub_resource type="FontVariation" id="FontVariation_it6cy"]
+base_font = ExtResource("2_p7262")
+
+[sub_resource type="Theme" id="Theme_yvbvk"]
+default_font = SubResource("FontVariation_it6cy")
+default_font_size = 30
+
+[sub_resource type="FontVariation" id="FontVariation_mc5rn"]
+base_font = ExtResource("2_h75dq")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjt2y"]
+bg_color = Color(0.3041232, 0.7057203, 0.17048508, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 4
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 14
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 26.0
+expand_margin_top = 5.0
+expand_margin_right = 20.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4p2n"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d861f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mf5h0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 8
+border_width_top = 7
+border_width_right = 9
+border_width_bottom = 8
+border_color = Color(0.5638548, 0.3008492, 0.17240265, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 7
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h75dq"]
+bg_color = Color(0.8553032, 0.12931782, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 4
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 20.0
+expand_margin_top = 10.0
+expand_margin_right = 20.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="Theme" id="Theme_p7262"]
+default_font = ExtResource("2_h75dq")
+default_font_size = 38
+
+[sub_resource type="FontVariation" id="FontVariation_ekeme"]
+base_font = ExtResource("2_h75dq")
+
+[node name="QuestMenu" type="CanvasLayer" unique_id=968596364]
+script = ExtResource("1_ctxka")
+
+[node name="TextureRect" type="ColorRect" parent="." unique_id=653011259]
+material = SubResource("ShaderMaterial_lpkyb")
+anchors_preset = -1
+anchor_left = -0.15
+anchor_top = -0.18240741
+anchor_right = 1.1824074
+anchor_bottom = 1.15
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=502180661]
+position = Vector2(982, 533)
+scale = Vector2(1.7669344, 1.8802085)
+sprite_frames = SubResource("SpriteFrames_lpkyb")
+animation = &"Close"
+
+[node name="BackgroundContainer" type="PanelContainer" parent="." unique_id=309232799]
+custom_minimum_size = Vector2(1080, 720)
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 286.0
+offset_top = 18.5
+offset_right = -286.0
+offset_bottom = -18.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ekeme")
+
+[node name="MarginContainer" type="MarginContainer" parent="BackgroundContainer" unique_id=1771747378]
+layout_mode = 2
+theme_override_constants/margin_left = 65
+theme_override_constants/margin_top = 65
+theme_override_constants/margin_right = -136
+theme_override_constants/margin_bottom = 65
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BackgroundContainer/MarginContainer" unique_id=1707074181]
+layout_mode = 2
+size_flags_stretch_ratio = 3.03
+
+[node name="MainQuest" type="VBoxContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer" unique_id=778665334]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(1250, 0)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="vflowcontainer" type="VFlowContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest" unique_id=1813235516]
+custom_minimum_size = Vector2(0, 875)
+layout_mode = 2
+theme = SubResource("Theme_yvbvk")
+theme_override_constants/h_separation = 150
+theme_override_constants/v_separation = 47
+
+[node name="Title" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer" unique_id=2054895107]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+offset_transform_enabled = true
+theme_override_colors/font_color = Color(0.95645005, 0.8382387, 0.5036742, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/paragraph_spacing = 9
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = SubResource("FontVariation_mc5rn")
+theme_override_font_sizes/font_size = 123
+theme_override_styles/normal = SubResource("StyleBoxFlat_vjt2y")
+text = "Main Quest"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FetchQuest" type="PanelContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer" unique_id=514097412]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w4p2n")
+
+[node name="QuestDetails" type="VBoxContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/FetchQuest" unique_id=871314169]
+custom_minimum_size = Vector2(525, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 9
+
+[node name="QuestName" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/FetchQuest/QuestDetails" unique_id=1779767140]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 50
+text = "Turdle Grab"
+
+[node name="Description" type="RichTextLabel" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/FetchQuest/QuestDetails" unique_id=334335407]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -6
+text = "The weird turtle wants help with getting high, but he is so slow, he can't reach them."
+fit_content = true
+
+[node name="ObjectivesList" type="VBoxContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/FetchQuest/QuestDetails" unique_id=1727423166]
+layout_mode = 2
+
+[node name="two" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/FetchQuest/QuestDetails/ObjectivesList" unique_id=677554675]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
+text = "Find a way to cut the flowers"
+
+[node name="One" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/FetchQuest/QuestDetails/ObjectivesList" unique_id=1028165704]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Find a way to find get the flowers"
+
+[node name="Button" type="Button" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/FetchQuest" unique_id=1738084743]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_d861f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf5h0")
+
+[node name="Kill Quest" type="PanelContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer" unique_id=1461404880]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w4p2n")
+
+[node name="QuestDetails" type="VBoxContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/Kill Quest" unique_id=1929076334]
+custom_minimum_size = Vector2(525, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 9
+
+[node name="QuestName" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/Kill Quest/QuestDetails" unique_id=159167478]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 50
+text = "Fly Guy"
+
+[node name="Description" type="RichTextLabel" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/Kill Quest/QuestDetails" unique_id=1545096824]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -6
+text = "Remeber your a frog and frogs eat flies, I think, either way your hungery."
+fit_content = true
+
+[node name="ObjectivesList" type="VBoxContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/Kill Quest/QuestDetails" unique_id=1939691000]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="two" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/Kill Quest/QuestDetails/ObjectivesList" unique_id=1298727588]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
+text = "Eat 100 Flies"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/Kill Quest/QuestDetails/ObjectivesList" unique_id=1839293970]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/Kill Quest/QuestDetails/ObjectivesList/HBoxContainer" unique_id=1364093873]
+layout_mode = 2
+text = "0"
+
+[node name="ProgressBar" type="ProgressBar" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/Kill Quest/QuestDetails/ObjectivesList/HBoxContainer" unique_id=2093440331]
+custom_minimum_size = Vector2(305.255, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label2" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/Kill Quest/QuestDetails/ObjectivesList/HBoxContainer" unique_id=1452092773]
+layout_mode = 2
+text = "100"
+
+[node name="Button" type="Button" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/Kill Quest" unique_id=2146319235]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_d861f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf5h0")
+
+[node name="DiscoverQuest" type="PanelContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer" unique_id=117347961]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w4p2n")
+
+[node name="QuestDetails" type="VBoxContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/DiscoverQuest" unique_id=581258623]
+custom_minimum_size = Vector2(525, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 9
+
+[node name="QuestName" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/DiscoverQuest/QuestDetails" unique_id=265385468]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 50
+text = "Hopper"
+
+[node name="Description" type="RichTextLabel" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/DiscoverQuest/QuestDetails" unique_id=224793103]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -6
+text = "You've found yourself in this crazy and wacky world. How about you hop around."
+fit_content = true
+
+[node name="ObjectivesList" type="VBoxContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/DiscoverQuest/QuestDetails" unique_id=1333706076]
+layout_mode = 2
+
+[node name="two" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/DiscoverQuest/QuestDetails/ObjectivesList" unique_id=40483440]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
+text = "Find a Village"
+
+[node name="One" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/DiscoverQuest/QuestDetails/ObjectivesList" unique_id=692193390]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Find the Mushroom Kingdom"
+
+[node name="One2" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/DiscoverQuest/QuestDetails/ObjectivesList" unique_id=2075355991]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Find the restroom, like soon"
+
+[node name="Button2" type="Button" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/DiscoverQuest" unique_id=1411863622]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_d861f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf5h0")
+
+[node name="DoQuest" type="PanelContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer" unique_id=1166471303]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w4p2n")
+
+[node name="QuestDetails" type="VBoxContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/DoQuest" unique_id=775624195]
+custom_minimum_size = Vector2(525, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 9
+
+[node name="QuestName" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/DoQuest/QuestDetails" unique_id=1476752391]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 50
+text = "Ribbit the Rabbit"
+
+[node name="Description" type="RichTextLabel" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/DoQuest/QuestDetails" unique_id=1517797510]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -6
+text = "The weird turtle he too high after giving him the flower, he isn't able to compete in the race anymore. You now have to race for him."
+fit_content = true
+
+[node name="ObjectivesList" type="VBoxContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/DoQuest/QuestDetails" unique_id=302634967]
+layout_mode = 2
+
+[node name="two" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/DoQuest/QuestDetails/ObjectivesList" unique_id=1971629473]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
+text = "Compete in the race"
+
+[node name="Button2" type="Button" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/DoQuest" unique_id=1317474413]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_d861f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf5h0")
+
+[node name="ChoiceQuest" type="PanelContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer" unique_id=636005231]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w4p2n")
+
+[node name="QuestDetails" type="VBoxContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/ChoiceQuest" unique_id=124311484]
+custom_minimum_size = Vector2(525, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 9
+
+[node name="QuestName" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/ChoiceQuest/QuestDetails" unique_id=1968411391]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 50
+text = "Stupid Conflict"
+
+[node name="Description" type="RichTextLabel" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/ChoiceQuest/QuestDetails" unique_id=1702698337]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -6
+text = "The two kingdoms are fighing the most pointless and un resonable fight. Who deserves the frog"
+fit_content = true
+
+[node name="ObjectivesList" type="VBoxContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/ChoiceQuest/QuestDetails" unique_id=365356349]
+layout_mode = 2
+
+[node name="two" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/ChoiceQuest/QuestDetails/ObjectivesList" unique_id=262271485]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
+text = "Meet with the blue King"
+
+[node name="Label" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/ChoiceQuest/QuestDetails/ObjectivesList" unique_id=8778015]
+layout_mode = 2
+text = "or"
+
+[node name="One" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/ChoiceQuest/QuestDetails/ObjectivesList" unique_id=1413453213]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Meet with the red king"
+
+[node name="Button2" type="Button" parent="BackgroundContainer/MarginContainer/HBoxContainer/MainQuest/vflowcontainer/ChoiceQuest" unique_id=691338449]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_d861f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf5h0")
+
+[node name="SideQuest" type="VBoxContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer" unique_id=934927339]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(1250, 0)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="vflowcontainer" type="VFlowContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/SideQuest" unique_id=122732327]
+custom_minimum_size = Vector2(0, 875)
+layout_mode = 2
+theme = SubResource("Theme_yvbvk")
+theme_override_constants/h_separation = 150
+theme_override_constants/v_separation = 47
+
+[node name="Title" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/SideQuest/vflowcontainer" unique_id=1440515382]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+offset_transform_enabled = true
+theme_override_colors/font_color = Color(0.948886, 0.8594661, 0.43384293, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/paragraph_spacing = 9
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = SubResource("FontVariation_mc5rn")
+theme_override_font_sizes/font_size = 123
+theme_override_styles/normal = SubResource("StyleBoxFlat_h75dq")
+text = "Side Quest"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FetchQuest" type="PanelContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/SideQuest/vflowcontainer" unique_id=613591251]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w4p2n")
+
+[node name="QuestDetails" type="VBoxContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/SideQuest/vflowcontainer/FetchQuest" unique_id=991294615]
+custom_minimum_size = Vector2(525, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 9
+
+[node name="QuestName" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/SideQuest/vflowcontainer/FetchQuest/QuestDetails" unique_id=1038555225]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 50
+text = "The Deer"
+
+[node name="Description" type="RichTextLabel" parent="BackgroundContainer/MarginContainer/HBoxContainer/SideQuest/vflowcontainer/FetchQuest/QuestDetails" unique_id=678713270]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -6
+text = "You heard from some stranger about a deer hiding out in the deep forest"
+fit_content = true
+
+[node name="ObjectivesList" type="VBoxContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/SideQuest/vflowcontainer/FetchQuest/QuestDetails" unique_id=606920818]
+layout_mode = 2
+
+[node name="two" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/SideQuest/vflowcontainer/FetchQuest/QuestDetails/ObjectivesList" unique_id=1813658865]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
+text = "Find the Deer"
+
+[node name="Button" type="Button" parent="BackgroundContainer/MarginContainer/HBoxContainer/SideQuest/vflowcontainer/FetchQuest" unique_id=1372684741]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_d861f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf5h0")
+
+[node name="Kill Quest" type="PanelContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/SideQuest/vflowcontainer" unique_id=577138604]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w4p2n")
+
+[node name="QuestDetails" type="VBoxContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/SideQuest/vflowcontainer/Kill Quest" unique_id=234325216]
+custom_minimum_size = Vector2(525, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 9
+
+[node name="QuestName" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/SideQuest/vflowcontainer/Kill Quest/QuestDetails" unique_id=2108984518]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 50
+text = "Kill Them All"
+
+[node name="Description" type="RichTextLabel" parent="BackgroundContainer/MarginContainer/HBoxContainer/SideQuest/vflowcontainer/Kill Quest/QuestDetails" unique_id=137059487]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -6
+text = "Remeber your a frog and frogs kill flies, I think, either way your dangerous"
+fit_content = true
+
+[node name="ObjectivesList" type="VBoxContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/SideQuest/vflowcontainer/Kill Quest/QuestDetails" unique_id=929411287]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="two" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/SideQuest/vflowcontainer/Kill Quest/QuestDetails/ObjectivesList" unique_id=746870842]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
+text = "Kill 1,000,000 Flies"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/SideQuest/vflowcontainer/Kill Quest/QuestDetails/ObjectivesList" unique_id=1186558843]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/SideQuest/vflowcontainer/Kill Quest/QuestDetails/ObjectivesList/HBoxContainer" unique_id=1903129952]
+layout_mode = 2
+text = "0"
+
+[node name="ProgressBar" type="ProgressBar" parent="BackgroundContainer/MarginContainer/HBoxContainer/SideQuest/vflowcontainer/Kill Quest/QuestDetails/ObjectivesList/HBoxContainer" unique_id=1287552330]
+custom_minimum_size = Vector2(305.255, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label2" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/SideQuest/vflowcontainer/Kill Quest/QuestDetails/ObjectivesList/HBoxContainer" unique_id=812018863]
+layout_mode = 2
+text = "1,000,000"
+
+[node name="Button" type="Button" parent="BackgroundContainer/MarginContainer/HBoxContainer/SideQuest/vflowcontainer/Kill Quest" unique_id=649082461]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_d861f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf5h0")
+
+[node name="Side Tab" type="VBoxContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer" unique_id=661386697]
+visible = false
+custom_minimum_size = Vector2(-0.105, 21.86)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(-392.24, -315.045)
+offset_transform_rotation = 1.5707964
+offset_transform_visual_only = false
+theme = SubResource("Theme_p7262")
+theme_override_constants/separation = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BackgroundContainer/MarginContainer/HBoxContainer/Side Tab" unique_id=1710517216]
+custom_minimum_size = Vector2(1000, 0)
+custom_maximum_size = Vector2(155.75, -1)
+propagate_maximum_size = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 14
+
+[node name="Main" type="TextureButton" parent="BackgroundContainer/MarginContainer/HBoxContainer/Side Tab/HBoxContainer" unique_id=2032612388]
+custom_minimum_size = Vector2(166.17, 91.585)
+layout_mode = 2
+texture_normal = ExtResource("31_3e1qq")
+texture_hover = ExtResource("32_dy34p")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/Side Tab/HBoxContainer/Main" unique_id=77089150]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -19.5
+offset_right = 20.0
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8187391, 0.7867961, 0.6401849, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_ekeme")
+theme_override_font_sizes/font_size = 37
+text = "Main"
+
+[node name="Side" type="TextureButton" parent="BackgroundContainer/MarginContainer/HBoxContainer/Side Tab/HBoxContainer" unique_id=348763102]
+custom_minimum_size = Vector2(166.17, 91.585)
+layout_mode = 2
+texture_normal = ExtResource("32_ev2dr")
+texture_hover = ExtResource("34_d861f")
+stretch_mode = 0
+
+[node name="Label2" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/Side Tab/HBoxContainer/Side" unique_id=1688938769]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -19.5
+offset_right = 20.0
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8187391, 0.7867961, 0.6401849, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_ekeme")
+theme_override_font_sizes/font_size = 36
+text = "Side"
+
+[node name="CloseButton" type="TextureButton" parent="BackgroundContainer/MarginContainer/HBoxContainer/Side Tab/HBoxContainer" unique_id=1966598142]
+custom_minimum_size = Vector2(166.17, 91.585)
+layout_mode = 2
+texture_normal = ExtResource("33_l5r6c")
+texture_hover = ExtResource("36_vjt2y")
+stretch_mode = 0
+
+[node name="Label2" type="Label" parent="BackgroundContainer/MarginContainer/HBoxContainer/Side Tab/HBoxContainer/CloseButton" unique_id=1715675176]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -19.5
+offset_right = 20.0
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8187391, 0.7867961, 0.6401849, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_ekeme")
+theme_override_font_sizes/font_size = 35
+text = "Close"
+
+[connection signal="pressed" from="BackgroundContainer/MarginContainer/HBoxContainer/Side Tab/HBoxContainer/Main" to="." method="_on_main_pressed"]
+[connection signal="pressed" from="BackgroundContainer/MarginContainer/HBoxContainer/Side Tab/HBoxContainer/Side" to="." method="_on_side_pressed"]
+[connection signal="pressed" from="BackgroundContainer/MarginContainer/HBoxContainer/Side Tab/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

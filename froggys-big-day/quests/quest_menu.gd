@@ -1,14 +1,13 @@
 extends CanvasLayer
 
 @onready var panel: Control = $Panel
-@onready var quest_list: ItemList = $Panel/MarginContainer/VBoxContainer/HSplitContainer/QuestList
-@onready var close_button: Button = $Panel/MarginContainer/VBoxContainer/CloseButton
+@onready var quest_list: ItemList = $Panel/MarginContainer/VBoxContainer/HSplitContainer/MainQuests/QuestList
+@onready var close_button: TextureButton = $Panel/CloseButton
 
 # New: details panel references
-@onready var quest_name_label: Label = $Panel/MarginContainer/VBoxContainer/HSplitContainer/QuestDetails/QuestName
-@onready var description_label: RichTextLabel = $Panel/MarginContainer/VBoxContainer/HSplitContainer/QuestDetails/Description
-@onready var objectives_box: VBoxContainer = $Panel/MarginContainer/VBoxContainer/HSplitContainer/QuestDetails/Objectives
-
+@onready var quest_name_label: Label = $Panel/MarginContainer/VBoxContainer/HSplitContainer/MainQuests/QuestDetails/QuestName
+@onready var description_label: RichTextLabel = $Panel/MarginContainer/VBoxContainer/HSplitContainer/MainQuests/QuestDetails/Description
+@onready var objectives_box: VBoxContainer = $Panel/MarginContainer/VBoxContainer/HSplitContainer/MainQuests/QuestDetails/Objectives
 
 func _ready() -> void:
 	#Keep working while the game is paused
@@ -35,7 +34,7 @@ func open_menu() -> void:
 	print("List size: ", quest_list.size)
 	print("Max columns: ", quest_list.max_columns)
 	print("Row 0 rect: ", quest_list.get_item_rect(0))
-	print("Row 1 rect: ", quest_list.get_item_rect(1))
+	#print("Row 1 rect: ", quest_list.get_item_rect(1))
 	get_tree().paused = true
 
 func close_menu() -> void:
@@ -68,12 +67,18 @@ func show_quest(quest: Quest) -> void:
 	#Remove old objective labels
 	for child in objectives_box.get_children():
 		child.queue_free()
+	
+	var pixel_font = FontVariation.new()
+	pixel_font.base_font = load("res://assets/fonts/PixelifySans-VariableFont_wght.ttf")
 
 	#Add one label per objective
 	for objective in quest.objectives:
 		var label := Label.new()
 		label.text = "• " + objective
 		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		label.add_theme_font_override("font", pixel_font)
+		label.add_theme_font_size_override("font_size", 24)
+		label.add_theme_color_override("font_color", Color(0.42, 0.64, 0.28))
 		objectives_box.add_child(label)
 
 #empty the details panel
@@ -82,3 +87,7 @@ func clear_details() -> void:
 	description_label.text = ""
 	for child in objectives_box.get_children():
 		child.queue_free()
+
+
+func _on_close_button_pressed() -> void:
+	pass # Replace with function body.

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://v1k5y76vt2gb"]
+
+[ext_resource type="Script" uid="uid://cqchtwqel3tem" path="res://quests/quest.gd" id="1_ol1sv"]
+
+[resource]
+script = ExtResource("1_ol1sv")
+id = "tortie_quest"
+title = "Tortie's Quest"
+description = "Tortie the tortoise needs flowers for his mom for mothers day! Help him get some."
+objectives = Array[String](["Find Tortie Flowers", "Bring them to Tortie"])
+metadata/_custom_type_script = "uid://cqchtwqel3tem"

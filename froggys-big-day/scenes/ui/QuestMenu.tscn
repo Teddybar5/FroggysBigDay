@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://6snwrejtmlib"]
 
 [ext_resource type="Script" uid="uid://dfdd0oiyaiox3" path="res://quests/quest_menu.gd" id="1_ctxka"]
+[ext_resource type="Texture2D" uid="uid://c5h84tr0hkw3t" path="res://assets/art/UI/Menu_Background.png" id="2_e33ki"]
+[ext_resource type="FontFile" uid="uid://dxqntrflqsbdy" path="res://assets/fonts/Jacquard24-Regular.ttf" id="3_e33ki"]
+[ext_resource type="FontFile" uid="uid://sob56d3ryv55" path="res://assets/fonts/PixelifySans-VariableFont_wght.ttf" id="4_1t277"]
+[ext_resource type="Texture2D" uid="uid://cn3fpwu5bbc1v" path="res://assets/art/UI/Close_Button.png" id="4_e33ki"]
 
 [node name="QuestMenu" type="CanvasLayer" unique_id=968596364]
 script = ExtResource("1_ctxka")
@@ -21,6 +25,10 @@ offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="Panel/MarginContainer" unique_id=1060019072]
+layout_mode = 2
+texture = ExtResource("2_e33ki")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=778665334]
 layout_mode = 2
 
@@ -30,29 +38,86 @@ layout_mode = 2
 
 [node name="Title" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=2054895107]
 layout_mode = 2
-text = "Quest Menu"
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.01
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 55)
+theme_override_colors/font_color = Color(0.22745098, 0.36862746, 0.20392157, 1)
+theme_override_fonts/font = ExtResource("3_e33ki")
+theme_override_font_sizes/font_size = 75
+text = "Main Quests                             Side Quests"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HSplitContainer" type="HSplitContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=429753673]
 layout_mode = 2
+split_offsets = PackedInt32Array(1695)
+split_offset = 1695
 
-[node name="QuestList" type="ItemList" parent="Panel/MarginContainer/VBoxContainer/HSplitContainer" unique_id=1498017196]
+[node name="MainQuests" type="HSplitContainer" parent="Panel/MarginContainer/VBoxContainer/HSplitContainer" unique_id=521702683]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(180, 55)
+split_offsets = PackedInt32Array(0, 0)
+
+[node name="QuestList" type="ItemList" parent="Panel/MarginContainer/VBoxContainer/HSplitContainer/MainQuests" unique_id=1498017196]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
+offset_transform_enabled = true
+theme_override_colors/font_color = Color(0.22745098, 0.36862746, 0.20392157, 1)
+theme_override_colors/font_hovered_color = Color(0.22745098, 0.36862746, 0.20392157, 1)
+theme_override_colors/font_hovered_selected_color = Color(0.22745098, 0.36862746, 0.20392157, 1)
+theme_override_colors/font_selected_color = Color(0.22745098, 0.36862746, 0.20392157, 1)
+theme_override_fonts/font = ExtResource("3_e33ki")
+theme_override_font_sizes/font_size = 30
 
-[node name="QuestDetails" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HSplitContainer" unique_id=1536066092]
+[node name="QuestDetails" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HSplitContainer/MainQuests" unique_id=1536066092]
+layout_mode = 2
+offset_transform_enabled = true
+
+[node name="QuestName" type="Label" parent="Panel/MarginContainer/VBoxContainer/HSplitContainer/MainQuests/QuestDetails" unique_id=1442562515]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.42304105, 0.6378966, 0.28210196, 1)
+theme_override_fonts/font = ExtResource("4_1t277")
+theme_override_font_sizes/font_size = 24
+
+[node name="Description" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer/HSplitContainer/MainQuests/QuestDetails" unique_id=2064976264]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.42352942, 0.6392157, 0.28235295, 1)
+theme_override_fonts/normal_font = ExtResource("4_1t277")
+theme_override_font_sizes/normal_font_size = 24
+
+[node name="Objectives" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HSplitContainer/MainQuests/QuestDetails" unique_id=1757423066]
 layout_mode = 2
 
-[node name="QuestName" type="Label" parent="Panel/MarginContainer/VBoxContainer/HSplitContainer/QuestDetails" unique_id=1442562515]
+[node name="SideQuests" type="HSplitContainer" parent="Panel/MarginContainer/VBoxContainer/HSplitContainer/MainQuests" unique_id=548376011]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(600, 0)
+
+[node name="QuestList" type="ItemList" parent="Panel/MarginContainer/VBoxContainer/HSplitContainer/MainQuests/SideQuests" unique_id=56387]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+offset_transform_position = Vector2(170, 55)
+
+[node name="QuestDetails" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HSplitContainer/MainQuests/SideQuests" unique_id=1345611130]
 layout_mode = 2
 
-[node name="Description" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer/HSplitContainer/QuestDetails" unique_id=2064976264]
+[node name="QuestName" type="Label" parent="Panel/MarginContainer/VBoxContainer/HSplitContainer/MainQuests/SideQuests/QuestDetails" unique_id=882380706]
 layout_mode = 2
 
-[node name="Objectives" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HSplitContainer/QuestDetails" unique_id=1757423066]
+[node name="Description" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer/HSplitContainer/MainQuests/SideQuests/QuestDetails" unique_id=217842462]
 layout_mode = 2
 
-[node name="CloseButton" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=994992588]
+[node name="Objectives" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HSplitContainer/MainQuests/SideQuests/QuestDetails" unique_id=951311502]
 layout_mode = 2
-text = "Close Menu"
+
+[node name="CloseButton" type="TextureButton" parent="Panel" unique_id=1471758134]
+layout_mode = 0
+offset_left = 735.0
+offset_top = 973.0
+offset_right = 1183.0
+offset_bottom = 1101.0
+texture_normal = ExtResource("4_e33ki")
+
+[connection signal="pressed" from="Panel/CloseButton" to="." method="_on_close_button_pressed"]
