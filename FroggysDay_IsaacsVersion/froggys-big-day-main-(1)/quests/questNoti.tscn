@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://yvc3tdptu0hq"]
+
+[ext_resource type="Script" uid="uid://b5ct3hi3j25he" path="res://quests/quest_noti.gd" id="1_jrvdy"]
+
+[node name="QuestNotification" type="CanvasLayer" unique_id=8449116]
+script = ExtResource("1_jrvdy")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=436497519]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -46.5
+offset_right = 72.0
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=291102142]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer" unique_id=546021673]
+layout_mode = 2
+text = "New Quest Added!"
