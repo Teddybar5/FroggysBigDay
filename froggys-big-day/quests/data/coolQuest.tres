@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://hhxakf418ln8"]
-
-[ext_resource type="Script" uid="uid://cqchtwqel3tem" path="res://quests/quest.gd" id="1_jsysu"]
-
-[resource]
-script = ExtResource("1_jsysu")
-metadata/_custom_type_script = "uid://cqchtwqel3tem"

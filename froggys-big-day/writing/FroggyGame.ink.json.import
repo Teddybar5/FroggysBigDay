@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://c66dxqjwd1m72"
+path="res://.godot/imported/FroggyGame.ink.json-c4f71d704ebdbb2fbad2fa521ccb5feb.res"
+
+[deps]
+
+source_file="res://writing/FroggyGame.ink.json"
+dest_files=["res://.godot/imported/FroggyGame.ink.json-c4f71d704ebdbb2fbad2fa521ccb5feb.res"]
+
+[params]
+
+compress=true

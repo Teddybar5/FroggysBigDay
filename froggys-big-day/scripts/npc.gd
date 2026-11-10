@@ -59,23 +59,25 @@ func _on_interaction_area_body_exited(body: Node2D) -> void:
 		dialogue_scroll_box.hide()
 	
 func _input(event: InputEvent) -> void:
-	if player_in_range and event.is_action_pressed("interact") and !has_talked:
+	if player_in_range and event.is_action_pressed("interact"):
 		run_dialogue()
-	elif  player_in_range and event.is_action_pressed("interact") and has_talked:
-		check_flowers()
+	
 	
 func run_dialogue() -> void:
 	dialogue_scroll_box.show()
 	player_character.can_move = false
 	
-	await ink_dialogue_manager.start_dialogue("piggy", {
+	#hardcoded
+	if has_talked:
+		await ink_dialogue_manager.start_dialogue("piggy", {
 		"has_gems": "Gems" in player_character.inventory,
-	})
-	await get_tree().create_timer(2.0).timeout
+		})
+		
+		await get_tree().create_timer(2.0).timeout
+		QuestManager.accept_quest("piggieQuest")
+	else:
+		pass
+	#hardcoded
 	
-	has_talked = true
 	player_character.can_move = true
 	dialogue_scroll_box.hide()
-	
-func check_flowers() -> void:
-	pass
