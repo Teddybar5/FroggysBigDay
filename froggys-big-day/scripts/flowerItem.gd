@@ -32,17 +32,15 @@ func _input(event: InputEvent) -> void:
 		run_dialogue()
 		
 func run_dialogue() -> void:
-	dialogue_scroll_box.show()
-	player_character.can_move = false
+	#dialogue_scroll_box.show()
+	#player_character.can_move = false
 	
-	#if await dialogue_manager.runFlowerDialogue():
-		#player_character.can_move = true
-		#pick_up_object()
+	pick_up_object()
 
-	await get_tree().create_timer(1.5).timeout
-	dialogue_scroll_box.hide()
-	player_character.can_move = true
+	#await get_tree().create_timer(1.5).timeout
+	#dialogue_scroll_box.hide()
+	#player_character.can_move = true
 
 func pick_up_object() -> void:
-	player_character.inventory.append("Flowers")
+	player_character.inventory.append("Gems")
 	queue_free()

@@ -68,15 +68,12 @@ func run_dialogue() -> void:
 	player_character.can_move = false
 	
 	#hardcoded
-	if has_talked:
-		await ink_dialogue_manager.start_dialogue("piggy", {
-		"has_gems": "Gems" in player_character.inventory,
-		})
+	await ink_dialogue_manager.start_dialogue("piggy", {
+	"has_gems": "Gems" in player_character.inventory,
+	})
 		
-		await get_tree().create_timer(2.0).timeout
-		QuestManager.accept_quest("piggieQuest")
-	else:
-		pass
+	await get_tree().create_timer(2.0).timeout
+	QuestManager.accept_quest("piggieQuest")
 	#hardcoded
 	
 	player_character.can_move = true
