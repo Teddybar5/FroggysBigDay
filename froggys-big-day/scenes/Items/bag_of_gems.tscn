@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cx6lu4vxs2pqs"]
+
+[ext_resource type="Texture2D" uid="uid://bxbo8ccr81fj6" path="res://assets/art/sprites/sack_of_jewels.png" id="1_51o2y"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i8sac"]
+
+[node name="Bag_of_gems" type="Sprite2D" unique_id=149410543]
+texture = ExtResource("1_51o2y")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=845575964]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=284338658]
+position = Vector2(1, 5)
+shape = SubResource("CapsuleShape2D_i8sac")

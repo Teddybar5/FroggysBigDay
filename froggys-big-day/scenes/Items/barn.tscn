@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d1f2kmjgxo4i1"]
+
+[ext_resource type="Texture2D" uid="uid://dq24voi3geobd" path="res://assets/art/sprites/Farmhouse.png" id="1_fsla1"]
+
+[node name="Barn" type="Sprite2D" unique_id=570955429]
+texture = ExtResource("1_fsla1")
