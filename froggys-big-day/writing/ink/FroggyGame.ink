@@ -27,7 +27,7 @@ Player:
     Piggy: I don't know what that means!
 -
 
-Piggy: Do you mind helping me get something? I left my sack of gems behind Grandpa Piggy's barn. It's the [insert description] over [insert direction]
+Piggy: Do you mind helping me get something? I left my sack of gems behind Grandpa Piggy's barn. It's the red farmhouse over to the southeast.
 
 Player: 
 *Oh course!
