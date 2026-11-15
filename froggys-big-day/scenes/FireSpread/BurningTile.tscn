@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://453245rbr70h"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nwphl"]
+light_mode = 1
+
+[sub_resource type="Curve" id="Curve_5inxd"]
+_data = [Vector2(0.0053191558, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.011235952), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_5nya1"]
+offsets = PackedFloat32Array(0, 0.30864197, 1)
+colors = PackedColorArray(0.7802833, 0.6730813, 1.1551381e-06, 1, 0.77714777, 0.37790042, 0, 1, 0.92374873, 0.024724983, 5.7756904e-07, 1)
+
+[sub_resource type="Gradient" id="Gradient_wmiq4"]
+offsets = PackedFloat32Array(0.006024096, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bih8b"]
+gradient = SubResource("Gradient_wmiq4")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="BurningTile" type="Node2D" unique_id=786601301]
+
+[node name="Flames" type="CPUParticles2D" parent="." unique_id=850398438]
+material = SubResource("CanvasItemMaterial_nwphl")
+position = Vector2(0, -1)
+amount = 20
+lifetime = 0.8
+direction = Vector2(0, -1)
+spread = 20.0
+gravity = Vector2(0, -30)
+initial_velocity_min = 10.0
+initial_velocity_max = 25.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_5inxd")
+color_ramp = SubResource("Gradient_5nya1")
+
+[node name="Glow" type="PointLight2D" parent="." unique_id=452736198]
+position = Vector2(0, -1)
+texture = SubResource("GradientTexture2D_bih8b")
