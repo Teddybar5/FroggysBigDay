@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bfx17ag03b4r7" path="res://scenes/ui/FlyHungerBar.tscn" id="6_dnftk"]
 [ext_resource type="Script" uid="uid://bfm4jj0btuheo" path="res://scripts/dialogueManager.gd" id="7_32pff"]
 [ext_resource type="PackedScene" uid="uid://c222m6dbnjsie" path="res://scenes/Items/sheers.tscn" id="7_dnftk"]
-[ext_resource type="Texture2D" uid="uid://b74rb6gbnr20d" path="res://assets/art/sprites/idle-1.png.png" id="7_u0b8w"]
+[ext_resource type="PackedScene" uid="uid://cx6lu4vxs2pqs" path="res://scenes/Items/bag_of_gems.tscn" id="7_u0b8w"]
 [ext_resource type="Script" uid="uid://cysey7gdtxeff" path="res://scripts/skillCheckManager.gd" id="8_3ijqg"]
-[ext_resource type="Texture2D" uid="uid://duf5b76tbekry" path="res://assets/art/sprites/farmhouse.png" id="8_7yo45"]
+[ext_resource type="PackedScene" uid="uid://d1f2kmjgxo4i1" path="res://scenes/Items/barn.tscn" id="8_u0b8w"]
 [ext_resource type="Script" uid="uid://b817bd38b4kjo" path="res://writing/ink_dialogue_manager.gd" id="9_qd7ug"]
 [ext_resource type="Script" uid="uid://eop8wk11brc2" path="res://addons/inkgd/ink_player.gd" id="10_dt23x"]
 [ext_resource type="PackedScene" uid="uid://cx12jlngqg8e1" path="res://scenes/Items/fly.tscn" id="10_fpd5e"]
@@ -64,14 +64,11 @@ scale = Vector2(0.117999986, 0.105000004)
 position = Vector2(229.15, 338.8)
 scale = Vector2(0.8031249, 0.9875)
 
-[node name="BagOfGems" type="Sprite2D" parent="." unique_id=901838201]
-position = Vector2(636, 728)
-texture = ExtResource("7_u0b8w")
+[node name="BagOfGems" parent="." unique_id=424508596 instance=ExtResource("7_u0b8w")]
+position = Vector2(630, 735)
 
-[node name="Barn" type="Sprite2D" parent="." unique_id=600947306]
+[node name="Barn" parent="." unique_id=1315087635 groups=["minimap_item"] instance=ExtResource("8_u0b8w")]
 position = Vector2(545, 662)
-scale = Vector2(0.99999994, 1)
-texture = ExtResource("8_7yo45")
 
 [node name="SkillCheckManager" type="Node" parent="." unique_id=805111120]
 script = ExtResource("8_3ijqg")

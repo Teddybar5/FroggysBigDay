@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cx6lu4vxs2pqs"]
+
+[ext_resource type="Texture2D" uid="uid://b74rb6gbnr20d" path="res://assets/art/sprites/idle-1.png.png" id="1_51o2y"]
+[ext_resource type="Script" uid="uid://dswtvyiac8jta" path="res://scripts/bag_of_gems.gd" id="2_fvjas"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i8sac"]
+
+[node name="BagOfGems" type="Sprite2D" unique_id=424508596 groups=["minimap_item"]]
+texture = ExtResource("1_51o2y")
+script = ExtResource("2_fvjas")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=838112397]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=505939973]
+position = Vector2(1, 6)
+shape = SubResource("CapsuleShape2D_i8sac")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
