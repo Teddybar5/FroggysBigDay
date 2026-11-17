@@ -63,7 +63,7 @@ Piggy: Hey there pal! It seems like you dozed off there for a second. Do you kno
 * [I'm on a floating rock drifting through space]
     Piggy: I don't know what that means!
 -
-Piggy: Do you mind helping me get something? I left my sack of gems behind Grandpa Piggy's barn. It's the (TODO: description) over (TODO: direction).
+Piggy: Do you mind helping me get something? I left my sack of gems behind Grandpa Piggy's barn. It's the red farmhouse over to the southeast.
 * [Of course!]
 -
 ~ intro_done = true
