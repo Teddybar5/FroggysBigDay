@@ -7,16 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://dhpsnoy3sryjx" path="res://scenes/Items/flower_0.tscn" id="6_214bh"]
 [ext_resource type="PackedScene" uid="uid://bfx17ag03b4r7" path="res://scenes/ui/FlyHungerBar.tscn" id="6_dnftk"]
 [ext_resource type="Script" uid="uid://bfm4jj0btuheo" path="res://scripts/dialogueManager.gd" id="7_32pff"]
-[ext_resource type="PackedScene" uid="uid://c222m6dbnjsie" path="res://scenes/Items/sheers.tscn" id="7_dnftk"]
-[ext_resource type="Texture2D" uid="uid://b74rb6gbnr20d" path="res://assets/art/sprites/idle-1.png.png" id="7_u0b8w"]
+[ext_resource type="PackedScene" uid="uid://c222m6dbnjsie" path="res://scenes/Items/gemBag.tscn" id="7_dnftk"]
 [ext_resource type="Script" uid="uid://cysey7gdtxeff" path="res://scripts/skillCheckManager.gd" id="8_3ijqg"]
 [ext_resource type="Texture2D" uid="uid://duf5b76tbekry" path="res://assets/art/sprites/farmhouse.png" id="8_7yo45"]
 [ext_resource type="Script" uid="uid://b817bd38b4kjo" path="res://writing/ink_dialogue_manager.gd" id="9_qd7ug"]
 [ext_resource type="Script" uid="uid://eop8wk11brc2" path="res://addons/inkgd/ink_player.gd" id="10_dt23x"]
 [ext_resource type="PackedScene" uid="uid://cx12jlngqg8e1" path="res://scenes/Items/fly.tscn" id="10_fpd5e"]
 [ext_resource type="Shader" uid="uid://d11lkdsbrqmy6" path="res://scenes/levels/MainLevel.gdshader" id="11_qb1ua"]
-[ext_resource type="Resource" uid="uid://dl10m5x31e2il" path="res://writing/froggy_quests.ink.json" id="11_sqrxc"]
 [ext_resource type="Script" uid="uid://dtjfgsnlrmliv" path="res://scripts/filter.gd" id="12_1x1s3"]
+[ext_resource type="Resource" uid="uid://dkms40ys367iu" path="res://writing/tempInk.ink.json" id="12_sqrxc"]
 [ext_resource type="PackedScene" uid="uid://cc32ueq3ht6g5" path="res://scenes/ui/miniMap.tscn" id="14_qd7ug"]
 [ext_resource type="PackedScene" uid="uid://6snwrejtmlib" path="res://scenes/ui/QuestMenu.tscn" id="14_viy5o"]
 
@@ -49,24 +48,32 @@ z_index = 1
 position = Vector2(437, 300)
 scale = Vector2(1.5, 1.5)
 
-[node name="Npc0" parent="." unique_id=2014059936 groups=["minimap_npc"] instance=ExtResource("6_3ijqg")]
+[node name="Piggy" parent="." unique_id=2014059936 groups=["minimap_npc"] instance=ExtResource("6_3ijqg")]
 position = Vector2(433, 185)
 scale = Vector2(2.5, 2.5)
+dialogue_knot = "piggy"
+quest_id = "piggieQuest"
+required_item = "Gems"
+tint = Color(0.8368277, 9.62615e-07, 0.47295004, 1)
+
+[node name="Grandpa" parent="." unique_id=1134941551 instance=ExtResource("6_3ijqg")]
+position = Vector2(83, 572)
+scale = Vector2(2.5, 2.5)
+dialogue_knot = "grandpa"
+required_item = "Gems"
 
 [node name="Flower0" parent="." unique_id=1809817678 groups=["minimap_item"] instance=ExtResource("6_214bh")]
 position = Vector2(122, 104)
 
-[node name="Sheers" parent="." unique_id=757987813 groups=["minimap_item"] instance=ExtResource("7_dnftk")]
-position = Vector2(276.5, -32.75)
-scale = Vector2(0.117999986, 0.105000004)
+[node name="BagOfGems" parent="." unique_id=757987813 groups=["minimap_item"] instance=ExtResource("7_dnftk")]
+position = Vector2(646, 725)
+scale = Vector2(1.4496257, 1.4275)
+dialogue_knot = "gems"
+item_name = "Gems"
 
 [node name="fly" parent="." unique_id=643904549 groups=["minimap_item"] instance=ExtResource("10_fpd5e")]
 position = Vector2(229.15, 338.8)
 scale = Vector2(0.8031249, 0.9875)
-
-[node name="BagOfGems" type="Sprite2D" parent="." unique_id=901838201]
-position = Vector2(636, 728)
-texture = ExtResource("7_u0b8w")
 
 [node name="Barn" type="Sprite2D" parent="." unique_id=600947306]
 position = Vector2(545, 662)
@@ -79,17 +86,18 @@ script = ExtResource("8_3ijqg")
 [node name="DialogueManager" type="Node" parent="." unique_id=1963797657]
 script = ExtResource("7_32pff")
 
-[node name="INKDialogueManager" type="Node" parent="." unique_id=1818420160]
+[node name="INKDialogueManager" type="Node" parent="." unique_id=1818420160 groups=["ink_manager"]]
 script = ExtResource("9_qd7ug")
+story_path = "uid://dkms40ys367iu"
 
 [node name="InkPlayer" type="Node" parent="INKDialogueManager" unique_id=507403460]
 script = ExtResource("10_dt23x")
-ink_file = ExtResource("11_sqrxc")
+ink_file = ExtResource("12_sqrxc")
 metadata/_custom_type_script = "uid://eop8wk11brc2"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1929615817]
 
-[node name="DialogueScrollBox" parent="CanvasLayer" unique_id=1993323280 instance=ExtResource("6_32pff")]
+[node name="DialogueScrollBox" parent="CanvasLayer" unique_id=1993323280 groups=["dialogue_box"] instance=ExtResource("6_32pff")]
 anchors_preset = -1
 anchor_left = 0.082
 anchor_top = 0.13700001

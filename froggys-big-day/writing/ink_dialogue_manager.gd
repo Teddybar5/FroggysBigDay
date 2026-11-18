@@ -1,23 +1,17 @@
 class_name InkDialogueManager extends Node
-## Runs conversations from an ink story using inkgd's InkPlayer.
-##
-## Usage from any script:
-##   var got_it: bool = await ink_dialogue_manager.start_dialogue("flowers")
-##   await ink_dialogue_manager.start_dialogue("tortie", {"has_talked": true})
-##
-## Ink tags understood (put them at the end of a line in your .ink file):
-##   # pause: 1.5        wait this many seconds after the line is shown
-##   # check: 2 2        run skill_check_manager.CheckSkill(2, 2); result goes
-##                       into the ink variable "check_passed"
+## Ink tags understood:
+##   # pause: 1.5        wait after the line
+##   # check: 2 2        skill check, result goes into "check_passed"
 ##   # quest: some_id    calls QuestManager.accept_quest("some_id")
+##   # give: Item        adds "Item" to the player's inventory
 
-# --- Your existing nodes (same paths as before) ---
+@export_file("*.json") var story_path: String = ""
+
 @onready var dialogue: RichTextLabel = $"../CanvasLayer/DialogueScrollBox/Panel/VBoxContainer/dialogue"
 @onready var player_choice: RichTextLabel = $"../CanvasLayer/DialogueScrollBox/Panel/VBoxContainer/playerChoice"
 @onready var skill_check_manager: SkillCheckManager = $"../SkillCheckManager"
 @onready var player_character: Player = $"../PlayerCharacter"
 
-# --- Child node: add an InkPlayer under this node and assign your story JSON ---
 @onready var ink_player = $InkPlayer
 
 const DEFAULT_PAUSE := 1.0
@@ -27,15 +21,17 @@ var _story_failed := false
 
 
 func _ready() -> void:
-	# Build the story resource from the compiled JSON ourselves,
-	# since the importer wasn't producing the right resource type.
+	if story_path.is_empty():
+		push_error("InkDialogueManager: story_path is empty. Set it in the Inspector.")
+		_story_failed = true
+		return
+
 	var story_resource := InkResource.new()
-	story_resource.json = FileAccess.get_file_as_string("res://writing/froggy_quests.ink.json")
+	story_resource.json = FileAccess.get_file_as_string(story_path)
 	ink_player.ink_file = story_resource
 	ink_player.loads_in_background = false
 	ink_player.loaded.connect(_on_story_loaded)
 
-	# Let the scene finish setting up before inkgd adds its runtime node.
 	await get_tree().process_frame
 	ink_player.create_story()
 
@@ -47,9 +43,6 @@ func _on_story_loaded(successfully: bool) -> void:
 		push_error("InkDialogueManager: the ink story failed to load.")
 
 
-## Starts the conversation at the given knot and waits until it finishes.
-## `variables` are written into ink before it starts (e.g. {"has_talked": true}).
-## Returns the value of the ink variable "success" when the conversation ends.
 func start_dialogue(knot: String, variables: Dictionary = {}) -> bool:
 	while not _story_loaded:
 		if _story_failed:
@@ -85,8 +78,6 @@ func start_dialogue(knot: String, variables: Dictionary = {}) -> bool:
 	return ink_player.get_variable("success") == true
 
 
-## Variables reset before every conversation.
-## Both must be declared with VAR at the top of your ink file.
 func _set_default_variables() -> void:
 	ink_player.set_variable("check_passed", false)
 	ink_player.set_variable("success", false)
@@ -112,5 +103,7 @@ func _handle_tags(tags: Array) -> void:
 			ink_player.set_variable("check_passed", passed)
 		elif tag.begins_with("quest:"):
 			QuestManager.accept_quest(tag.trim_prefix("quest:").strip_edges())
+		elif tag.begins_with("give:"):
+			player_character.inventory.append(tag.trim_prefix("give:").strip_edges())
 
 	await get_tree().create_timer(pause).timeout

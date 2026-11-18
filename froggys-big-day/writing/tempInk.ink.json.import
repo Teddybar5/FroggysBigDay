@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://dkms40ys367iu"
+path="res://.godot/imported/tempInk.ink.json-1648fdc99a0827d1d3f57b417379dc87.res"
+
+[deps]
+
+source_file="res://writing/tempInk.ink.json"
+dest_files=["res://.godot/imported/tempInk.ink.json-1648fdc99a0827d1d3f57b417379dc87.res"]
+
+[params]
+
+compress=true
