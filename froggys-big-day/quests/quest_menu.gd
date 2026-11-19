@@ -16,6 +16,17 @@ func _ready() -> void:
 	close_button.pressed.connect(close_menu)
 	quest_list.item_selected.connect(_on_quest_selected)
 
+	# Make the description visible and sized properly
+	description_label.fit_content = true
+	description_label.scroll_active = false
+	description_label.custom_minimum_size = Vector2(0, 60)
+
+	var desc_font = FontVariation.new()
+	desc_font.base_font = load("res://assets/fonts/PixelifySans-VariableFont_wght.ttf")
+	description_label.add_theme_font_override("normal_font", desc_font)
+	description_label.add_theme_font_size_override("normal_font_size", 24)
+	description_label.add_theme_color_override("default_color", Color(0.25, 0.15, 0.05)) # dark brown
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_quest_menu"):
 		toggle_menu()
